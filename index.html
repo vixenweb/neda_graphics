@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://neda-design.ir/">
   <meta property="og:title" data-i18n="meta.ogTitle" content="ندا | طراح گرافیک حرفه‌ای">
   <meta property="og:description" data-i18n="meta.ogDescription" content="از ایده تا واقعیت با ندا — طراحی لوگو، هویت بصری، پوستر و کارت ویزیت با کیفیتی لوکس و حرفه‌ای.">
-  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:image" content="assets/images/Neda_Visuals.webp">
   <meta property="og:locale" content="fa_IR">
   <meta property="og:site_name" data-i18n="meta.ogSiteName" content="ندا | طراح گرافیک">
 
@@ -28,10 +28,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" data-i18n="meta.ogTitle" content="ندا | طراح گرافیک حرفه‌ای">
   <meta name="twitter:description" data-i18n="meta.ogDescription" content="از ایده تا واقعیت با ندا — طراحی لوگو، هویت بصری، پوستر و کارت ویزیت.">
-  <meta name="twitter:image" content="assets/images/og-cover.jpg">
+  <meta name="twitter:image" content="assets/images/Neda_Visuals.webp">
 
   <!-- ===== Theme & Icons ===== -->
-  <meta name="theme-color" content="#07040d">
+  <meta name="theme-color" content="#0a0509">
   <meta name="color-scheme" content="dark">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
@@ -54,7 +54,7 @@
     "jobTitle": "طراح گرافیک",
     "description": "طراح گرافیک حرفه‌ای متخصص در طراحی لوگو، هویت بصری برند، پوستر و کارت ویزیت.",
     "url": "https://neda-design.ir/",
-    "image": "assets/images/og-cover.jpg",
+    "image": "assets/images/Neda_Visuals.webp",
     "telephone": "+989174766617",
     "sameAs": [
       "https://t.me/+989174766617",
@@ -78,8 +78,6 @@
   </div>
 
   <!-- Cursor glow (decorative) -->
-  <div class="cursor-glow" aria-hidden="true" id="cursorGlow"></div>
-
   <a class="skip-link" href="#main-content" data-i18n="skipLink">رفتن به محتوای اصلی</a>
 
   <!-- ===================== HEADER ===================== -->
@@ -121,10 +119,8 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="hero" aria-label="بخش معرفی">
-      <div class="hero-decor" aria-hidden="true">
-        <div class="glass-shard shard--a"></div>
-        <div class="glass-shard shard--b"></div>
-        <div class="glass-shard shard--c"></div>
+      <div class="hero-lines-wrapper" aria-hidden="true">
+        <div id="heroLines" class="floating-lines-container"></div>
       </div>
 
       <div class="hero-inner">
@@ -161,7 +157,7 @@
             <span class="stat-label" data-i18n="stats.yearsExperience">سال تجربه</span>
           </li>
           <li class="stat-card glass-panel">
-            <span class="stat-number" data-count="120">۰</span><span class="stat-suffix">+</span>
+            <span class="stat-number" data-count="800">۰</span><span class="stat-suffix">+</span>
             <span class="stat-label" data-i18n="stats.projects">پروژه موفق</span>
           </li>
           <li class="stat-card glass-panel">
@@ -561,6 +557,7 @@
   </div>
 
   </div> <!-- Close content wrapper -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

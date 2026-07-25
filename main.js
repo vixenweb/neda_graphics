@@ -8,7 +8,7 @@
   // ---------- Translation Data ----------
   const translations = {
     fa: {
-      'meta.title': 'ندا | طراح گرافیک حرفه‌ای — طراحی لوگو، هویت بصری و پوستر',
+      'meta.title': 'Neda_Visuals',
       'meta.description': 'ندا، طراح گرافیک با بیش از ۳ سال تجربه در طراحی لوگو، هویت بصری برند، پوستر و کارت ویزیت. از ایده تا واقعیت، خلق آثاری ماندگار برای برند شما.',
       'meta.keywords': 'طراح گرافیک, طراحی لوگو, هویت بصری, طراحی پوستر, کارت ویزیت, برندینگ, گرافیست, ندا, طراحی گرافیک لوکس',
       'meta.ogTitle': 'ندا | طراح گرافیک حرفه‌ای',
@@ -23,10 +23,10 @@
       'nav.collab': 'همکاری',
       'nav.contact': 'ارتباط با من',
       'header.cta': 'شروع پروژه',
-      'hero.eyebrow': 'طراح گرافیک',
-      'hero.titleSmall': 'از ایده تا واقعیت با',
-      'hero.titleBig': 'نـــدا',
-      'hero.subtitle': 'طراحی گرافیک جایی‌ست که خلاقیت با دقت و حرفه‌ای‌گری پیوند می‌خورد؛ من به برندها هویت می‌بخشم و ایده‌های شما را به آثاری بصری ماندگار تبدیل می‌کنم.',
+      'hero.eyebrow': 'طراح گرافیک و تولید کننده هوش مصنوعی',
+      'hero.titleSmall': 'از ایده تا تصویر نهایی',
+      'hero.titleBig': '<span class="latin">Neda_Visuals</span>',
+      'hero.subtitle': 'ساخته تبلیغات بصری<br>طراحی لوگو، گرافیک، چاپ، انیمیشن تبلیغاتی<br>با یه ظاههر حرفه ای، بیشتر دیده شو و بیشتر بفروش',
       'hero.viewPortfolio': 'مشاهده نمونه کارها',
       'hero.startCollab': 'شروع همکاری',
       'stats.yearsExperience': 'سال تجربه',
@@ -96,18 +96,18 @@
       'form.desc.placeholder': 'کمی درباره برند، هدف و سلیقه‌ات بنویس...',
       'form.submit': 'ارسال درخواست مشاوره',
       'contact.name': 'ندا',
-      'contact.role': 'طراح گرافیک & کارگردان هنری',
+      'contact.role': 'طراح گرافیک و تولید کننده هوش مصنوعی',
       'contact.phone.label': 'تماس تلفنی',
       'contact.email.label': 'ایمیل',
       'contact.location.label': 'موقعیت',
-      'contact.location.value': 'تهران، ایران',
+      'contact.location.value': 'شیراز، ایران',
       'contact.hours.label': 'ساعات پاسخ‌گویی',
-      'contact.hours.value': 'شنبه تا پنج‌شنبه، ۹ تا ۱۸',
+      'contact.hours.value': 'هرروز، ۹ تا ۲۱',
       'contact.socials.label': 'من را دنبال کنید',
       'footer.copyright': '© <span id="currentYear"></span> تمامی حقوق برای ندا محفوظ است.'
     },
     en: {
-      'meta.title': 'Neda | Professional Graphic Designer — Logo, Brand Identity & Poster Design',
+      'meta.title': 'Neda_Visuals',
       'meta.description': 'Neda, a graphic designer with over 3 years of experience in logo design, brand identity, posters, and business cards. From idea to reality, creating lasting works for your brand.',
       'meta.keywords': 'graphic designer, logo design, brand identity, poster design, business card, branding, graphic artist, Neda, luxury graphic design',
       'meta.ogTitle': 'Neda | Professional Graphic Designer',
@@ -122,10 +122,10 @@
       'nav.collab': 'Collaboration',
       'nav.contact': 'Contact Me',
       'header.cta': 'Start Project',
-      'hero.eyebrow': 'Graphic Designer',
-      'hero.titleSmall': 'From idea to reality with',
-      'hero.titleBig': 'Neda',
-      'hero.subtitle': 'Graphic design is where creativity meets precision and professionalism; I give brands identity and turn your ideas into lasting visual works.',
+      'hero.eyebrow': 'Graphic Designer & AI Producer',
+      'hero.titleSmall': 'From idea to final image',
+      'hero.titleBig': '<span class="latin">Neda_Visuals</span>',
+      'hero.subtitle': 'Creating visual advertisements<br>Logo design, graphics, print, promotional animation<br>With a professional appearance, be seen more and sell more',
       'hero.viewPortfolio': 'View Portfolio',
       'hero.startCollab': 'Start Collaboration',
       'stats.yearsExperience': 'Years Experience',
@@ -195,15 +195,114 @@
       'form.desc.placeholder': 'Write a bit about your brand, goals, and taste...',
       'form.submit': 'Send Consultation Request',
       'contact.name': 'Neda',
-      'contact.role': 'Graphic Designer & Art Director',
+      'contact.role': 'Graphic Designer & AI Producer',
       'contact.phone.label': 'Phone',
       'contact.email.label': 'Email',
       'contact.location.label': 'Location',
-      'contact.location.value': 'Tehran, Iran',
+      'contact.location.value': 'Shiraz, Iran',
       'contact.hours.label': 'Response Hours',
-      'contact.hours.value': 'Saturday to Thursday, 9 AM to 6 PM',
+      'contact.hours.value': 'Every day, 9 AM to 9 PM',
       'contact.socials.label': 'Follow Me',
       'footer.copyright': '© <span id="currentYear"></span> All rights reserved for Neda.'
+    },
+    ar: {
+      'meta.title': 'Neda_Visuals',
+      'meta.description': 'ندى، مصممة جرافيك بخبرة أكثر من ۳ سنوات في تصميم الشعارات والهوية البصرية والملصقات وبطاقات العمل. من الفكرة إلى الواقع، أبدع أعمالًا بصرية دائمة.',
+      'meta.keywords': 'مصممة جرافيك, تصميم شعار, هوية بصرية, تصميم ملصق, بطاقة عمل, براندينج, فنانة جرافيك, ندى, تصميم فاخر',
+      'meta.ogTitle': 'ندى | مصممة جرافيك محترفة',
+      'meta.ogDescription': 'من الفكرة إلى الواقع مع ندى — تصميم شعار وهوية بصرية وملصقات بجودة فاخرة ومحترفة.',
+      'meta.ogSiteName': 'ندى | مصممة جرافيك',
+      'skipLink': 'الانتقال إلى المحتوى الرئيسي',
+      'logo.name': 'ندى',
+      'logo.role': 'مصممة جرافيك',
+      'nav.home': 'الرئيسية',
+      'nav.about': 'من أنا',
+      'nav.portfolio': 'المعرض',
+      'nav.collab': 'تعاون',
+      'nav.contact': 'اتصل بي',
+      'header.cta': 'بدء المشروع',
+      'hero.eyebrow': 'مصممة جرافيك ومنتجة ذكاء اصطناعي',
+      'hero.titleSmall': 'من الفكرة إلى الصورة النهائية',
+      'hero.titleBig': '<span class="latin">Neda_Visuals</span>',
+      'hero.subtitle': 'إنشاء إعلانات بصرية<br>تصميم الشعارات، الجرافيك، الطباعة، الرسوم المتحركة الدعائية<br>بمظهر احترافي، كن أكثر رؤية وازدهر بالمبيعات',
+      'hero.viewPortfolio': 'عرض الأعمال',
+      'hero.startCollab': 'بدء التعاون',
+      'stats.yearsExperience': 'سنوات خبرة',
+      'stats.projects': 'مشاريع ناجحة',
+      'stats.clients': 'عملاء راضون',
+      'stats.satisfaction': 'رضا العملاء',
+      'about.eyebrow': 'تعرف عليّ أكثر',
+      'about.title': 'من أنا',
+      'about.bio1': 'أنا ندى. ولدت عام ۱۳۷۰ وتخرجت في بكالوريوس التصميم الجرافيكي.',
+      'about.bio2': 'لدي أكثر من ثلاث سنوات من الخبرة في تصميم الجرافيك، الشعارات، المونتاج وإنشاء الرسوم المتحركة. كما أنني أكملت دورات متخصصة في المونتاج باستخدام Adobe Premiere، وتصوير الهاتف، والذكاء الاصطناعي.',
+      'about.bio3': 'في كل مشروع أسعى لتقديم تصميمات محترفة ودائمة مع الإبداع والدقة وفهم احتياجات كل عمل.',
+      'about.bio4': 'أنا هنا معك بالإبداع والدقة وفهم احتياجاتك لمساعدتك على النمو والظهور.',
+      'about.letsTalk': 'هيا نتحدث',
+      'skills.logo.title': 'تصميم الشعار والهوية',
+      'skills.logo.desc': 'خلق هويات بصرية فريدة ودائمة لعلامتك التجارية',
+      'skills.poster.title': 'تصميم الملصقات والإعلانات',
+      'skills.poster.desc': 'إنتاج أعمال بصرية مؤثرة لحملاتك وفعالياتك',
+      'skills.card.title': 'تصميم بطاقة العمل',
+      'skills.card.desc': 'تصميم احترافي لأول انطباع يدوم عن علامتك',
+      'skills.identity.title': 'الذكاء الاصطناعي',
+      'skills.identity.desc': 'استخدام أحدث الأدوات لتقديم تصميمات عصرية',
+      'skills.ui.title': 'تصميم الرسوم المتحركة والموشن',
+      'skills.ui.desc': 'تجربة بصرية جميلة، حديثة وسهلة الاستخدام للرسوم المتحركة',
+      'skills.consult.title': 'استشارات إبداعية',
+      'skills.consult.desc': 'إرشاد متخصص لأفضل الخيارات البصرية لعلامتك',
+      'gallery.eyebrow': 'معرضي',
+      'gallery.title': 'أعمالي',
+      'gallery.desc': 'مختارة من مشاريع تصميم الشعارات والملصقات وبطاقات العمل',
+      'gallery.filter.all': 'الكل',
+      'gallery.filter.logo': 'شعار',
+      'gallery.filter.poster': 'ملصق',
+      'gallery.filter.card': 'بطاقة عمل',
+      'gallery.items.lamira.tag': 'شعار',
+      'gallery.items.lamira.title': 'الهوية البصرية لمقهى لاميرا',
+      'gallery.items.avaran.tag': 'ملصق',
+      'gallery.items.avaran.title': 'حملة الصيف أفاران',
+      'gallery.items.saya.tag': 'بطاقة عمل',
+      'gallery.items.saya.title': 'هوية استوديو العمارة سايا',
+      'gallery.items.vesta.tag': 'شعار',
+      'gallery.items.vesta.title': 'علامة التجميل فيستا',
+      'gallery.items.nayan.tag': 'ملصق',
+      'gallery.items.nayan.title': 'مهرجان الموسيقى نايان',
+      'gallery.items.edalat.tag': 'بطاقة عمل',
+      'gallery.items.edalat.title': 'مكتب المحاماة عدالة',
+      'gallery.items.zeitun.tag': 'شعار',
+      'gallery.items.zeitun.title': 'مطعم زيتون أسود',
+      'gallery.items.mah.tab.tag': 'ملصق',
+      'gallery.items.mah.tab.title': 'معرض الفن مهتاب',
+      'collab.eyebrow': 'تعاون',
+      'collab.title': 'أنا هنا لأساعدك',
+      'collab.desc': 'شارك فكرتك معي. اكتفِ بكتابة بضع سطور عن مشروعك؛ سأتواصل معك في أقل من ۲۴ ساعة حتى نبدأ معًا طريق خلق عمل مميز.',
+      'collab.point1': 'استشارة أولية مجانية',
+      'collab.point2': 'رد سريع وواضح',
+      'collab.point3': 'تصميم مخصص يتناسب مع علامتك',
+      'form.name.label': 'الاسم الكامل',
+      'form.name.placeholder': 'مثلاً: سارة محمدي',
+      'form.contact.label': 'رقم الهاتف أو البريد الإلكتروني',
+      'form.contact.placeholder': '٠٩١٢ ٠٠٠ ٠٠٠٠',
+      'form.projectType.label': 'نوع المشروع',
+      'form.projectType.select': 'اختر خيارًا',
+      'form.projectType.logo': 'تصميم شعار',
+      'form.projectType.identity': 'تصميم هوية',
+      'form.projectType.poster': 'تصميم ملصق',
+      'form.projectType.card': 'بطاقة عمل',
+      'form.projectType.other': 'أخرى',
+      'form.desc.label': 'حدثني عن مشروعك',
+      'form.desc.placeholder': 'اكتب قليلاً عن علامتك، هدفك، وذوقك...',
+      'form.submit': 'إرسال طلب استشارة',
+      'contact.name': 'ندى',
+      'contact.role': 'مصممة جرافيك ومنتجة ذكاء اصطناعي',
+      'contact.phone.label': 'الهاتف',
+      'contact.email.label': 'البريد الإلكتروني',
+      'contact.location.label': 'الموقع',
+      'contact.location.value': 'شيراز، ایران',
+      'contact.hours.label': 'ساعات الرد',
+      'contact.hours.value': 'كل يوم، 9 صباحًا حتى 9 مساءً',
+      'contact.socials.label': 'تابعني',
+      'footer.copyright': '© <span id="currentYear"></span> كل الحقوق محفوظة لندى.'
     }
   };
 
@@ -215,6 +314,357 @@
   const toPersianDigits = (input) =>
     String(input).replace(/[0-9]/g, (digit) => PERSIAN_DIGITS[digit]);
 
+  const hexToVec3 = (hex) => {
+    let value = hex.trim();
+    if (value.startsWith('#')) value = value.slice(1);
+
+    let r = 255;
+    let g = 255;
+    let b = 255;
+
+    if (value.length === 3) {
+      r = parseInt(value[0] + value[0], 16);
+      g = parseInt(value[1] + value[1], 16);
+      b = parseInt(value[2] + value[2], 16);
+    } else if (value.length === 6) {
+      r = parseInt(value.slice(0, 2), 16);
+      g = parseInt(value.slice(2, 4), 16);
+      b = parseInt(value.slice(4, 6), 16);
+    }
+
+    return new THREE.Vector3(r / 255, g / 255, b / 255);
+  };
+
+  const initHeroFloatingLines = () => {
+    const container = document.getElementById('heroLines');
+    if (!container) return;
+    if (typeof THREE === 'undefined') {
+      container.classList.add('hero-lines-fallback');
+      return;
+    }
+
+    const vertexShader = `
+precision highp float;
+
+void main() {
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
+`;
+
+    const fragmentShader = `
+precision highp float;
+
+uniform float iTime;
+uniform vec3  iResolution;
+uniform float animationSpeed;
+
+uniform bool enableTop;
+uniform bool enableMiddle;
+uniform bool enableBottom;
+
+uniform int topLineCount;
+uniform int middleLineCount;
+uniform int bottomLineCount;
+
+uniform float topLineDistance;
+uniform float middleLineDistance;
+uniform float bottomLineDistance;
+
+uniform vec3 topWavePosition;
+uniform vec3 middleWavePosition;
+uniform vec3 bottomWavePosition;
+
+uniform vec2 iMouse;
+uniform bool interactive;
+uniform float bendRadius;
+uniform float bendStrength;
+uniform float bendInfluence;
+
+uniform bool parallax;
+uniform float parallaxStrength;
+uniform vec2 parallaxOffset;
+
+uniform vec3 lineGradient[8];
+uniform int lineGradientCount;
+
+const vec3 BLACK = vec3(0.0);
+
+mat2 rotate(float r) {
+  return mat2(cos(r), sin(r), -sin(r), cos(r));
+}
+
+vec3 background_color(vec2 uv) {
+  vec3 col = vec3(0.0);
+
+  float y = sin(uv.x - 0.2) * 0.3 - 0.1;
+  float m = uv.y - y;
+
+  col += mix(vec3(47.0, 75.0, 162.0) / 255.0, BLACK, smoothstep(0.0, 1.0, abs(m)));
+  col += mix(vec3(233.0, 71.0, 245.0) / 255.0, BLACK, smoothstep(0.0, 1.0, abs(m - 0.8)));
+  return col * 0.5;
+}
+
+vec3 getLineColor(float t) {
+  if (lineGradientCount <= 0) {
+    return vec3(1.0);
+  }
+
+  float clampedT = clamp(t, 0.0, 0.9999);
+  float scaled = clampedT * float(lineGradientCount - 1);
+  int idx = int(floor(scaled));
+  float f = fract(scaled);
+  int idx2 = min(idx + 1, lineGradientCount - 1);
+
+  vec3 c1 = lineGradient[idx];
+  vec3 c2 = lineGradient[idx2];
+  return mix(c1, c2, f) * 0.5;
+}
+
+float wave(vec2 uv, float offset, vec2 screenUv, vec2 mouseUv, bool shouldBend) {
+  float time = iTime * animationSpeed;
+  float x_offset = offset;
+  float x_movement = time * 0.1;
+  float amp = sin(offset + time * 0.2) * 0.3;
+  float y = sin(uv.x + x_offset + x_movement) * amp;
+
+  if (shouldBend) {
+    vec2 d = screenUv - mouseUv;
+    float influence = exp(-dot(d, d) * bendRadius);
+    float bendOffset = (mouseUv.y - screenUv.y) * influence * bendStrength * bendInfluence;
+    y += bendOffset;
+  }
+
+  float m = uv.y - y;
+  return 0.0175 / max(abs(m) + 0.01, 1e-3) + 0.01;
+}
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+  vec2 baseUv = (2.0 * fragCoord - iResolution.xy) / iResolution.y;
+  baseUv.y *= -1.0;
+
+  if (parallax) {
+    baseUv += parallaxOffset;
+  }
+
+  vec3 col = vec3(0.0);
+  vec3 b = lineGradientCount > 0 ? vec3(0.0) : background_color(baseUv);
+
+  vec2 mouseUv = vec2(0.0);
+  if (interactive) {
+    mouseUv = (2.0 * iMouse - iResolution.xy) / iResolution.y;
+    mouseUv.y *= -1.0;
+  }
+
+  if (enableBottom) {
+    for (int i = 0; i < bottomLineCount; ++i) {
+      float fi = float(i);
+      float t = fi / max(float(bottomLineCount - 1), 1.0);
+      vec3 lineCol = getLineColor(t);
+      float angle = bottomWavePosition.z * log(length(baseUv) + 1.0);
+      vec2 ruv = baseUv * rotate(angle);
+      col += lineCol * wave(
+        ruv + vec2(bottomLineDistance * fi + bottomWavePosition.x, bottomWavePosition.y),
+        1.5 + 0.2 * fi,
+        baseUv,
+        mouseUv,
+        interactive
+      ) * 0.2;
+    }
+  }
+
+  if (enableMiddle) {
+    for (int i = 0; i < middleLineCount; ++i) {
+      float fi = float(i);
+      float t = fi / max(float(middleLineCount - 1), 1.0);
+      vec3 lineCol = getLineColor(t);
+      float angle = middleWavePosition.z * log(length(baseUv) + 1.0);
+      vec2 ruv = baseUv * rotate(angle);
+      col += lineCol * wave(
+        ruv + vec2(middleLineDistance * fi + middleWavePosition.x, middleWavePosition.y),
+        2.0 + 0.15 * fi,
+        baseUv,
+        mouseUv,
+        interactive
+      );
+    }
+  }
+
+  if (enableTop) {
+    for (int i = 0; i < topLineCount; ++i) {
+      float fi = float(i);
+      float t = fi / max(float(topLineCount - 1), 1.0);
+      vec3 lineCol = getLineColor(t);
+      float angle = topWavePosition.z * log(length(baseUv) + 1.0);
+      vec2 ruv = baseUv * rotate(angle);
+      ruv.x *= -1.0;
+      col += lineCol * wave(
+        ruv + vec2(topLineDistance * fi + topWavePosition.x, topWavePosition.y),
+        1.0 + 0.2 * fi,
+        baseUv,
+        mouseUv,
+        interactive
+      ) * 0.1;
+    }
+  }
+
+  fragColor = vec4(col, 1.0);
+}
+
+void main() {
+  vec4 color = vec4(0.0);
+  mainImage(color, gl_FragCoord.xy);
+  gl_FragColor = color;
+}
+`;
+
+    const topWavePosition = new THREE.Vector3(10.0, 0.5, -0.4);
+    const middleWavePosition = new THREE.Vector3(5.0, 0.0, 0.2);
+    const bottomWavePosition = new THREE.Vector3(2.0, -0.7, 0.4);
+
+    const linesGradient = ['#d52678', '#ffb2dd', '#2a0c1c'];
+
+    const uniforms = {
+      iTime: { value: 0 },
+      iResolution: { value: new THREE.Vector3(1, 1, 1) },
+      animationSpeed: { value: 1.8 },
+      enableTop: { value: true },
+      enableMiddle: { value: true },
+      enableBottom: { value: true },
+      topLineCount: { value: 6 },
+      middleLineCount: { value: 6 },
+      bottomLineCount: { value: 6 },
+      topLineDistance: { value: 8.5 * 0.01 },
+      middleLineDistance: { value: 8.5 * 0.01 },
+      bottomLineDistance: { value: 8.5 * 0.01 },
+      topWavePosition: { value: topWavePosition },
+      middleWavePosition: { value: middleWavePosition },
+      bottomWavePosition: { value: bottomWavePosition },
+      iMouse: { value: new THREE.Vector2(-1000, -1000) },
+      interactive: { value: true },
+      bendRadius: { value: 8.0 },
+      bendStrength: { value: -2.0 },
+      bendInfluence: { value: 0.0 },
+      parallax: { value: true },
+      parallaxStrength: { value: 0.2 },
+      parallaxOffset: { value: new THREE.Vector2(0, 0) },
+      lineGradient: { value: Array.from({ length: 8 }, () => new THREE.Vector3(1, 1, 1)) },
+      lineGradientCount: { value: linesGradient.length }
+    };
+
+    linesGradient.forEach((color, index) => {
+      uniforms.lineGradient.value[index].copy(hexToVec3(color));
+    });
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+    camera.position.z = 1;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'high-performance' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.setSize(container.clientWidth || 1, container.clientHeight || 1, false);
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
+    container.appendChild(renderer.domElement);
+
+    const material = new THREE.ShaderMaterial({
+      uniforms,
+      vertexShader,
+      fragmentShader
+    });
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    const clock = new THREE.Clock();
+    const mouse = new THREE.Vector2(0, 0);
+    const parallaxOffset = new THREE.Vector2(0, 0);
+
+    const setSize = () => {
+      const width = container.clientWidth || 1;
+      const height = container.clientHeight || 1;
+      renderer.setSize(width, height, false);
+      const canvasWidth = renderer.domElement.width;
+      const canvasHeight = renderer.domElement.height;
+      uniforms.iResolution.value.set(canvasWidth, canvasHeight, 1);
+    };
+
+    setSize();
+
+    const resizeHandler = () => {
+      setSize();
+    };
+
+    const resizeObserver = typeof ResizeObserver !== 'undefined'
+      ? new ResizeObserver(setSize)
+      : null;
+
+    if (resizeObserver) {
+      resizeObserver.observe(container);
+    } else {
+      window.addEventListener('resize', resizeHandler);
+    }
+
+    const heroSection = container.closest('.hero') || container;
+
+    const handlePointerMove = (event) => {
+      const rect = container.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const dpr = renderer.getPixelRatio();
+      mouse.set(x * dpr, (rect.height - y) * dpr);
+      uniforms.iMouse.value.copy(mouse);
+      uniforms.bendInfluence.value = 1.0;
+
+      if (uniforms.parallax.value) {
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const offsetX = (x - centerX) / rect.width;
+        const offsetY = -(y - centerY) / rect.height;
+        parallaxOffset.set(offsetX * uniforms.parallaxStrength.value, offsetY * uniforms.parallaxStrength.value);
+        uniforms.parallaxOffset.value.copy(parallaxOffset);
+      }
+    };
+
+    const handlePointerLeave = () => {
+      uniforms.bendInfluence.value = 0.0;
+      if (uniforms.parallax.value) {
+        parallaxOffset.set(0, 0);
+        uniforms.parallaxOffset.value.copy(parallaxOffset);
+      }
+    };
+
+    heroSection.addEventListener('pointermove', handlePointerMove);
+    heroSection.addEventListener('pointerleave', handlePointerLeave);
+
+    let rafId = 0;
+    const renderLoop = () => {
+      uniforms.iTime.value = clock.getElapsedTime();
+      renderer.render(scene, camera);
+      rafId = requestAnimationFrame(renderLoop);
+    };
+    renderLoop();
+
+    const cleanup = () => {
+      cancelAnimationFrame(rafId);
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      } else {
+        window.removeEventListener('resize', resizeHandler);
+      }
+      heroSection.removeEventListener('pointermove', handlePointerMove);
+      heroSection.removeEventListener('pointerleave', handlePointerLeave);
+      geometry.dispose();
+      material.dispose();
+      renderer.dispose();
+      renderer.forceContextLoss();
+      if (renderer.domElement.parentElement) {
+        renderer.domElement.parentElement.removeChild(renderer.domElement);
+      }
+    };
+
+    window.addEventListener('unload', cleanup);
+  };
+
   // ---------- Language Switching ----------
   function setLanguage(lang) {
     currentLang = lang;
@@ -224,11 +674,10 @@
     htmlEl.setAttribute('lang', lang);
     const contentWrapper = document.getElementById('content-wrapper');
     if (contentWrapper) {
-      contentWrapper.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+      contentWrapper.setAttribute('dir', lang === 'fa' || lang === 'ar' ? 'rtl' : 'ltr');
     }
-    htmlEl.style.fontFamily = lang === 'fa' ? 'var(--font-fa)' : 'var(--font-latin)';
+    htmlEl.style.fontFamily = lang === 'fa' || lang === 'ar' ? 'var(--font-fa)' : 'var(--font-latin)';
 
-    // Update the language switch slider position
     const langSwitch = document.getElementById('langBtn');
     if (langSwitch) {
       langSwitch.setAttribute('data-lang', lang);
@@ -387,32 +836,6 @@
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 
-  /* ---------- Ambient cursor glow ---------- */
-  const cursorGlow = document.getElementById('cursorGlow');
-  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-  if (cursorGlow && supportsHover) {
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let glowX = mouseX;
-    let glowY = mouseY;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    const renderGlow = () => {
-      glowX += (mouseX - glowX) * 0.12;
-      glowY += (mouseY - glowY) * 0.12;
-      cursorGlow.style.transform = `translate(${glowX}px, ${glowY}px) translate(-50%, -50%)`;
-      requestAnimationFrame(renderGlow);
-    };
-    requestAnimationFrame(renderGlow);
-  } else if (cursorGlow) {
-    cursorGlow.style.display = 'none';
-  }
-
   /* ---------- Gallery: category filter ---------- */
   const filterButtons = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
@@ -539,11 +962,11 @@
   }
 
   // ---------- Initialize everything ----------
-  // Set initial data-lang on switch
   const langSwitch = document.getElementById('langBtn');
   if (langSwitch) {
     langSwitch.setAttribute('data-lang', currentLang);
   }
   setLanguage(currentLang);
   initYear();
+  initHeroFloatingLines();
 })();
