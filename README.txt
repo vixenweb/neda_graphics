@@ -1,6 +1,4 @@
 
-demo: https://vixenweb.github.io/neda_graphics/
-=======
 راهنمای افزودن تصاویر واقعی (Real Image Guide)
 ================================================
 
@@ -12,4 +10,4 @@ demo: https://vixenweb.github.io/neda_graphics/
   poster-01.jpg poster-02.jpg poster-03.jpg
   card-01.jpg   card-02.jpg
 
-https://vixenweb.github.io/neda_graphics/
+demo: https://vixenweb.github.io/neda_graphics/
