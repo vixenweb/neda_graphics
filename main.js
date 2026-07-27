@@ -990,9 +990,15 @@ void main() {
         return;
       }
 
-      // Let Formspree reply directly to whatever the client typed in "phone or email"
-      if (replyToField && contactField) {
-        replyToField.value = contactField.value.trim();
+      const contactValue = contactField ? contactField.value.trim() : '';
+      const isEmail = contactValue && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+
+      if (replyToField) {
+        if (isEmail) {
+          replyToField.value = contactValue;
+        } else {
+          replyToField.value = '';
+        }
       }
 
       formStatus.classList.remove('is-error');
@@ -1001,9 +1007,14 @@ void main() {
       const submitBtn = form.querySelector('.form-submit');
       if (submitBtn) submitBtn.disabled = true;
 
+      const formData = new FormData(form);
+      if (!isEmail) {
+        formData.delete('_replyto');
+      }
+
       fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
+        body: formData,
         headers: { Accept: 'application/json' },
       })
         .then((response) => {
