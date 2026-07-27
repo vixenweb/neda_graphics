@@ -961,15 +961,22 @@ void main() {
     });
   }
 
-  /* ---------- Consultation form (front-end demo only) ----------
-     No backend is wired up yet. Swap the setTimeout below for a real
-     fetch() call to your email service, CRM, or API endpoint. */
+  /* ---------- Consultation form ----------
+     Submits to Formspree (https://formspree.io/f/meeyvdeg) via fetch/AJAX
+     so the page never reloads and the existing inline status message
+     keeps working in both languages. */
   const form = document.getElementById('collabForm');
   const formStatus = document.getElementById('formStatus');
+  const contactField = document.getElementById('contactInfo');
+  const replyToField = document.getElementById('formReplyTo');
 
   if (form && formStatus) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Silently drop the submission if the honeypot field was filled by a bot
+      const honeypot = form.querySelector('[name="_gotcha"]');
+      if (honeypot && honeypot.value) return;
 
       const requiredFields = form.querySelectorAll('[required]');
       let isValid = true;
@@ -983,17 +990,42 @@ void main() {
         return;
       }
 
+      // Let Formspree reply directly to whatever the client typed in "phone or email"
+      if (replyToField && contactField) {
+        replyToField.value = contactField.value.trim();
+      }
+
       formStatus.classList.remove('is-error');
       formStatus.textContent = currentLang === 'fa' ? 'در حال ارسال درخواست...' : 'Sending request...';
 
       const submitBtn = form.querySelector('.form-submit');
       if (submitBtn) submitBtn.disabled = true;
 
-      setTimeout(() => {
-        formStatus.textContent = currentLang === 'fa' ? 'درخواست شما با موفقیت ارسال شد! به‌زودی با شما تماس می‌گیریم.' : 'Your request has been sent successfully! We will contact you soon.';
-        if (submitBtn) submitBtn.disabled = false;
-        form.reset();
-      }, 900);
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      })
+        .then((response) => {
+          if (response.ok) {
+            formStatus.classList.remove('is-error');
+            formStatus.textContent = currentLang === 'fa'
+              ? 'درخواست شما با موفقیت ارسال شد! به‌زودی با شما تماس می‌گیریم.'
+              : 'Your request has been sent successfully! We will contact you soon.';
+            form.reset();
+            return;
+          }
+          throw new Error('submission-failed');
+        })
+        .catch(() => {
+          formStatus.classList.add('is-error');
+          formStatus.textContent = currentLang === 'fa'
+            ? 'مشکلی در ارسال پیش اومد. لطفاً دوباره تلاش کنید یا مستقیم از راه‌های ارتباطی دیگه پیام بدید.'
+            : 'Something went wrong. Please try again, or reach out directly using the contact details below.';
+        })
+        .finally(() => {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 

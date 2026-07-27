@@ -771,6 +771,7 @@ section[id] { scroll-margin-top: 110px; }
 .point-icon { color: var(--neon-magenta); font-size: 15px; text-shadow: 0 0 10px var(--neon-magenta); }
 
 .collab-form.glass-panel { padding: 42px; display: flex; flex-direction: column; gap: 22px; border-radius: var(--radius-lg); }
+.form-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); left: -9999px; }
 .form-row { display: flex; flex-direction: column; gap: 9px; }
 .form-row label { font-size: 14px; font-weight: 600; color: var(--mist); }
 .form-row input, .form-row select, .form-row textarea {

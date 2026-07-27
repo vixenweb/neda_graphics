@@ -437,7 +437,11 @@
           </ul>
         </div>
 
-        <form class="collab-form glass-panel" id="collabForm" data-reveal novalidate>
+        <form class="collab-form glass-panel" id="collabForm" data-reveal novalidate action="https://formspree.io/f/meeyvdeg" method="POST">
+          <input type="hidden" name="_subject" value="درخواست مشاوره جدید از سایت ندا">
+          <input type="hidden" name="_replyto" id="formReplyTo" value="">
+          <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="form-row">
             <label for="fullName" data-i18n="form.name.label">نام و نام خانوادگی</label>
             <input type="text" id="fullName" name="fullName" data-i18n-placeholder="form.name.placeholder" placeholder="مثلاً: سارا محمدی" required autocomplete="name">
