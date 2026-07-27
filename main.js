@@ -8,7 +8,7 @@
   // ---------- Translation Data ----------
   const translations = {
     fa: {
-      'meta.title': 'Neda_Visuals',
+      'meta.title': 'Neda Visuals',
       'meta.description': 'ندا، طراح گرافیک با بیش از ۳ سال تجربه در طراحی لوگو، هویت بصری برند، پوستر و کارت ویزیت. از ایده تا واقعیت، خلق آثاری ماندگار برای برند شما.',
       'meta.keywords': 'طراح گرافیک, طراحی لوگو, هویت بصری, طراحی پوستر, کارت ویزیت, برندینگ, گرافیست, ندا, طراحی گرافیک لوکس',
       'meta.ogTitle': 'ندا | طراح گرافیک حرفه‌ای',
@@ -25,7 +25,7 @@
       'header.cta': 'شروع پروژه',
       'hero.eyebrow': 'طراح گرافیک و تولید کننده هوش مصنوعی',
       'hero.titleSmall': 'از ایده تا تصویر نهایی',
-      'hero.titleBig': '<span class="latin">Neda_Visuals</span>',
+      'hero.titleBig': '<span class="latin">Neda Visuals</span>',
       'hero.subtitle': 'ساخته تبلیغات بصری<br>طراحی لوگو، گرافیک، چاپ، انیمیشن تبلیغاتی<br>با یه ظاهر حرفه‌ای، بیشتر دیده شو و بیشتر بفروش',
       'hero.viewPortfolio': 'مشاهده نمونه کارها',
       'hero.startCollab': 'شروع همکاری',
@@ -107,7 +107,7 @@
       'footer.copyright': '© <span id="currentYear"></span> تمامی حقوق برای ندا محفوظ است.'
     },
     en: {
-      'meta.title': 'Neda_Visuals',
+      'meta.title': 'Neda Visuals',
       'meta.description': 'Neda, a graphic designer with over 3 years of experience in logo design, brand identity, posters, and business cards. From idea to reality, creating lasting works for your brand.',
       'meta.keywords': 'graphic designer, logo design, brand identity, poster design, business card, branding, graphic artist, Neda, luxury graphic design',
       'meta.ogTitle': 'Neda | Professional Graphic Designer',
@@ -124,7 +124,7 @@
       'header.cta': 'Start Project',
       'hero.eyebrow': 'Graphic Designer & AI Producer',
       'hero.titleSmall': 'From idea to final image',
-      'hero.titleBig': '<span class="latin">Neda_Visuals</span>',
+      'hero.titleBig': '<span class="latin">Neda Visuals</span>',
       'hero.subtitle': 'Creating visual advertisements<br>Logo design, graphics, print, promotional animation<br>With a professional appearance, be seen more and sell more',
       'hero.viewPortfolio': 'View Portfolio',
       'hero.startCollab': 'Start Collaboration',
@@ -223,7 +223,7 @@
       'header.cta': 'بدء المشروع',
       'hero.eyebrow': 'مصممة جرافيك ومنتجة ذكاء اصطناعي',
       'hero.titleSmall': 'من الفكرة إلى الصورة النهائية',
-      'hero.titleBig': '<span class="latin">Neda_Visuals</span>',
+      'hero.titleBig': '<span class="latin">Neda Visuals</span>',
       'hero.subtitle': 'إنشاء إعلانات بصرية<br>تصميم الشعارات، الجرافيك، الطباعة، الرسوم المتحركة الدعائية<br>بمظهر احترافي، كن أكثر رؤية وازدهر بالمبيعات',
       'hero.viewPortfolio': 'عرض الأعمال',
       'hero.startCollab': 'بدء التعاون',
