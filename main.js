@@ -26,7 +26,7 @@
       'hero.eyebrow': 'طراح گرافیک و تولید کننده هوش مصنوعی',
       'hero.titleSmall': 'از ایده تا تصویر نهایی',
       'hero.titleBig': '<span class="latin">Neda Visuals</span>',
-      'hero.subtitle': 'ساخته تبلیغات بصری<br>طراحی لوگو، گرافیک، چاپ، انیمیشن تبلیغاتی<br>با یه ظاهر حرفه‌ای، بیشتر دیده شو و بیشتر بفروش',
+      'hero.subtitle': 'ساخت تبلیغات بصری<br>طراحی، گرافیک، چاپ، انیمیشن<br>با یه ظاهر حرفه‌ای، بیشتر دیده شو و بیشتر بفروش',
       'hero.viewPortfolio': 'مشاهده نمونه کارها',
       'hero.startCollab': 'شروع همکاری',
       'stats.yearsExperience': 'سال تجربه',
@@ -59,6 +59,7 @@
       'gallery.filter.logo': 'لوگو',
       'gallery.filter.poster': 'پوستر',
       'gallery.filter.card': 'کارت ویزیت',
+      'gallery.filter.animation': 'انیمیشن',
       'gallery.items.lamira.tag': 'لوگو',
       'gallery.items.lamira.title': 'هویت بصری کافه لمیرا',
       'gallery.items.avaran.tag': 'پوستر',
@@ -75,6 +76,10 @@
       'gallery.items.zeitun.title': 'رستوران زیتون سیاه',
       'gallery.items.mah.tab.tag': 'پوستر',
       'gallery.items.mah.tab.title': 'نمایشگاه هنری مهتاب',
+      'gallery.items.caramella.tag': 'انیمیشن',
+      'gallery.items.caramella.title': 'ریلز تبلیغاتی برند کارامللا',
+      'gallery.items.peyvand.tag': 'انیمیشن',
+      'gallery.items.peyvand.title': 'موشن گرافیک اپلیکیشن پیوند',
       'collab.eyebrow': 'همکاری',
       'collab.title': 'من کمکت می‌کنم',
       'collab.desc': 'ایده‌ات رو با من در میان بذار. کافیه چند خط درباره پروژه‌ات بنویسی؛ من ظرف کمتر از ۲۴ ساعت باهات تماس می‌گیرم تا با هم مسیر رسیدن به یک اثر خاص رو شروع کنیم.',
@@ -122,10 +127,10 @@
       'nav.collab': 'Collaboration',
       'nav.contact': 'Contact Me',
       'header.cta': 'Start Project',
-      'hero.eyebrow': 'Graphic Designer & AI Producer',
+      'hero.eyebrow': 'Graphic Designer & AI Creator',
       'hero.titleSmall': 'From idea to final image',
       'hero.titleBig': '<span class="latin">Neda Visuals</span>',
-      'hero.subtitle': 'Creating visual advertisements<br>Logo design, graphics, print, promotional animation<br>With a professional appearance, be seen more and sell more',
+      'hero.subtitle': 'Creating visual advertisements<br>design, graphics, print, animation<br>With a professional appearance, be seen more and sell more',
       'hero.viewPortfolio': 'View Portfolio',
       'hero.startCollab': 'Start Collaboration',
       'stats.yearsExperience': 'Years Experience',
@@ -158,6 +163,7 @@
       'gallery.filter.logo': 'Logo',
       'gallery.filter.poster': 'Poster',
       'gallery.filter.card': 'Business Card',
+      'gallery.filter.animation': 'Animation',
       'gallery.items.lamira.tag': 'Logo',
       'gallery.items.lamira.title': 'Lamira Cafe Brand Identity',
       'gallery.items.avaran.tag': 'Poster',
@@ -174,6 +180,10 @@
       'gallery.items.zeitun.title': 'Black Olive Restaurant',
       'gallery.items.mah.tab.tag': 'Poster',
       'gallery.items.mah.tab.title': 'Mahtab Art Exhibition',
+      'gallery.items.caramella.tag': 'Animation',
+      'gallery.items.caramella.title': 'Caramella Brand Promo Reel',
+      'gallery.items.peyvand.tag': 'Animation',
+      'gallery.items.peyvand.title': 'Peyvand App Motion Graphic',
       'collab.eyebrow': 'Collaboration',
       'collab.title': 'I Can Help You',
       'collab.desc': "Share your idea with me. Just write a few lines about your project; I'll contact you in less than 24 hours so we can start the path to a special work together.",
@@ -195,7 +205,7 @@
       'form.desc.placeholder': 'Write a bit about your brand, goals, and taste...',
       'form.submit': 'Send Consultation Request',
       'contact.name': 'Neda',
-      'contact.role': 'Graphic Designer & AI Producer',
+      'contact.role': 'Graphic Designer & AI Creator',
       'contact.phone.label': 'Phone',
       'contact.email.label': 'Email',
       'contact.location.label': 'Location',
@@ -224,7 +234,7 @@
       'hero.eyebrow': 'مصممة جرافيك ومنتجة ذكاء اصطناعي',
       'hero.titleSmall': 'من الفكرة إلى الصورة النهائية',
       'hero.titleBig': '<span class="latin">Neda Visuals</span>',
-      'hero.subtitle': 'إنشاء إعلانات بصرية<br>تصميم الشعارات، الجرافيك، الطباعة، الرسوم المتحركة الدعائية<br>بمظهر احترافي، كن أكثر رؤية وازدهر بالمبيعات',
+      'hero.subtitle': 'إنشاء إعلانات بصرية<br>تصميم، الجرافيك، الطباعة، الرسوم المتحركة الدعائية<br>بمظهر احترافي، كن أكثر رؤية وازدهر بالمبيعات',
       'hero.viewPortfolio': 'عرض الأعمال',
       'hero.startCollab': 'بدء التعاون',
       'stats.yearsExperience': 'سنوات خبرة',
@@ -257,6 +267,7 @@
       'gallery.filter.logo': 'شعار',
       'gallery.filter.poster': 'ملصق',
       'gallery.filter.card': 'بطاقة عمل',
+      'gallery.filter.animation': 'رسوم متحركة',
       'gallery.items.lamira.tag': 'شعار',
       'gallery.items.lamira.title': 'الهوية البصرية لمقهى لاميرا',
       'gallery.items.avaran.tag': 'ملصق',
@@ -273,6 +284,10 @@
       'gallery.items.zeitun.title': 'مطعم زيتون أسود',
       'gallery.items.mah.tab.tag': 'ملصق',
       'gallery.items.mah.tab.title': 'معرض الفن مهتاب',
+      'gallery.items.caramella.tag': 'رسوم متحركة',
+      'gallery.items.caramella.title': 'فيديو كاراميلا الترويجي المتحرك',
+      'gallery.items.peyvand.tag': 'رسوم متحركة',
+      'gallery.items.peyvand.title': 'رسوم متحركة لتطبيق پیوند',
       'collab.eyebrow': 'تعاون',
       'collab.title': 'أنا هنا لأساعدك',
       'collab.desc': 'شارك فكرتك معي. اكتفِ بكتابة بضع سطور عن مشروعك؛ سأتواصل معك في أقل من ۲۴ ساعة حتى نبدأ معًا طريق خلق عمل مميز.',
@@ -606,6 +621,9 @@ void main() {
 
     const heroSection = container.closest('.hero') || container;
 
+    let targetBendInfluence = 0;
+    const targetParallaxOffset = new THREE.Vector2(0, 0);
+
     const handlePointerMove = (event) => {
       const rect = container.getBoundingClientRect();
       const x = event.clientX - rect.left;
@@ -613,23 +631,21 @@ void main() {
       const dpr = renderer.getPixelRatio();
       mouse.set(x * dpr, (rect.height - y) * dpr);
       uniforms.iMouse.value.copy(mouse);
-      uniforms.bendInfluence.value = 1.0;
+      targetBendInfluence = 1.0;
 
       if (uniforms.parallax.value) {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         const offsetX = (x - centerX) / rect.width;
         const offsetY = -(y - centerY) / rect.height;
-        parallaxOffset.set(offsetX * uniforms.parallaxStrength.value, offsetY * uniforms.parallaxStrength.value);
-        uniforms.parallaxOffset.value.copy(parallaxOffset);
+        targetParallaxOffset.set(offsetX * uniforms.parallaxStrength.value, offsetY * uniforms.parallaxStrength.value);
       }
     };
 
     const handlePointerLeave = () => {
-      uniforms.bendInfluence.value = 0.0;
+      targetBendInfluence = 0.0;
       if (uniforms.parallax.value) {
-        parallaxOffset.set(0, 0);
-        uniforms.parallaxOffset.value.copy(parallaxOffset);
+        targetParallaxOffset.set(0, 0);
       }
     };
 
@@ -637,8 +653,24 @@ void main() {
     heroSection.addEventListener('pointerleave', handlePointerLeave);
 
     let rafId = 0;
+    let lastFrameTime = performance.now();
+    // How quickly the bend/parallax intensity fades in and out — high enough to feel
+    // immediate, but smooth enough to avoid a hard jump when the pointer leaves the hero.
+    const fadeSpeed = 10;
+
     const renderLoop = () => {
+      const now = performance.now();
+      const delta = Math.min((now - lastFrameTime) / 1000, 0.1);
+      lastFrameTime = now;
+
       uniforms.iTime.value = clock.getElapsedTime();
+
+      const fadeAmount = 1 - Math.exp(-fadeSpeed * delta);
+      uniforms.bendInfluence.value += (targetBendInfluence - uniforms.bendInfluence.value) * fadeAmount;
+      parallaxOffset.x += (targetParallaxOffset.x - parallaxOffset.x) * fadeAmount;
+      parallaxOffset.y += (targetParallaxOffset.y - parallaxOffset.y) * fadeAmount;
+      uniforms.parallaxOffset.value.copy(parallaxOffset);
+
       renderer.render(scene, camera);
       rafId = requestAnimationFrame(renderLoop);
     };
@@ -879,6 +911,15 @@ void main() {
 
       const paletteClass = Array.from(media.classList).find((c) => c.startsWith('gm--'));
       lightboxMedia.className = 'lightbox-media' + (paletteClass ? ` ${paletteClass}` : '');
+
+      const video = clone.querySelector('video');
+      if (video) {
+        video.controls = true;
+        video.removeAttribute('preload');
+        video.play().catch(() => {
+          /* Autoplay-with-sound can be blocked by the browser; controls let the user hit play manually. */
+        });
+      }
     }
 
     const tagText = tag ? tag.textContent.trim() : '';
@@ -895,6 +936,10 @@ void main() {
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    const video = lightboxMedia ? lightboxMedia.querySelector('video') : null;
+    if (video) {
+      video.pause();
+    }
   };
 
   galleryItems.forEach((item) => {

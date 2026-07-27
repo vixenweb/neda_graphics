@@ -10,4 +10,11 @@
   poster-01.jpg poster-02.jpg poster-03.jpg
   card-01.jpg   card-02.jpg
 
+assets/images/gallery/
+├── animation-01.mp4
+├── animation-01.jpg   ← پوستر ویدیوی اول (باید خودتون بسازید)
+├── animation-02.mp4
+└── animation-02.jpg 
+
 demo: https://vixenweb.github.io/neda_graphics/
+.
