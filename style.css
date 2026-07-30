@@ -124,61 +124,99 @@ html { scrollbar-color: var(--neon-violet) var(--void); scrollbar-width: thin; }
   gap: 10px;
 }
 
-/* Language switch - liquid glass style */
-.lang-switch {
-  position: relative;
+/* Language selector - liquid glass style */
+.lang-select { position: relative; }
+
+.lang-select-btn {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px;
+  gap: 6px;
+  padding: 8px 13px;
   border-radius: var(--radius-full);
   background: var(--surface);
   border: 1px solid var(--border-glass);
+  color: var(--pearl);
   cursor: pointer;
-  transition: all 0.3s var(--ease-out);
+  font-family: var(--font-latin);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
-.lang-switch:hover {
+.lang-select-btn:hover,
+.lang-select-btn[aria-expanded="true"] {
   border-color: var(--border-glass-strong);
   box-shadow: var(--glow-sm);
 }
 
-.lang-switch-slider {
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  width: calc(50% - 6px);
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--neon-violet), var(--neon-magenta));
-  box-shadow: var(--glow-sm);
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  z-index: 1;
+.lang-select-icon {
+  color: var(--neon-violet);
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out);
 }
 
-.lang-switch[data-lang="fa"] .lang-switch-slider {
-  transform: translateX(0);
+.lang-select-btn[aria-expanded="true"] .lang-select-icon {
+  transform: rotate(180deg);
 }
 
-.lang-switch[data-lang="en"] .lang-switch-slider {
-  transform: translateX(calc(-100% - 4px));
-}
-
-.lang-option {
-  position: relative;
-  z-index: 2;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--mist);
-  transition: color 0.3s var(--ease-out);
-  user-select: none;
-  width: 40px;
+.lang-select-current {
+  min-width: 16px;
   text-align: center;
 }
 
-.lang-switch[data-lang="fa"] .lang-fa,
-.lang-switch[data-lang="en"] .lang-en {
+/* Positioned via JS (fixed, synced to the button's rect) so it can float over
+   the header without being clipped by the header's own overflow:hidden, and
+   without ever expanding the header's height. */
+.lang-dropdown.glass-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 84px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px) scale(0.94);
+  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out), visibility 0.25s;
+  z-index: 200;
+}
+
+.lang-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.lang-dropdown li {
+  padding: 9px 0;
+  border-radius: 11px;
+  font-family: var(--font-latin);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--mist);
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+
+.lang-dropdown li:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--pearl);
+}
+
+.lang-dropdown li[aria-selected="true"] {
+  background: linear-gradient(135deg, var(--neon-violet), var(--neon-magenta));
   color: #fff;
+  box-shadow: var(--glow-sm);
 }
 
 /* Fix button icons for LTR */
@@ -546,7 +584,7 @@ section[id] { scroll-margin-top: 110px; }
   50% { filter: drop-shadow(0 0 75px rgba(255, 110, 196, 0.55)); }
 }
 
-.hero-subtitle { max-width: min(620px, 100%); color: var(--mist); font-size: 18px; line-height: 2; }
+.hero-subtitle { max-width: min(620px, 100%); color: white; font-size: 18px; line-height: 2; }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
@@ -674,10 +712,15 @@ section[id] { scroll-margin-top: 110px; }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 230px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
+  align-items: start; /* مهم: نذار آیتم‌ها کش بیان و ارتفاعشون به هم بخوره */
 }
+
+/* دیگه لازم نیست — این دو کلاس رو از CSS حذف کن: */
+/* .gallery-item.item--wide { grid-column: span 2; } */
+/* .gallery-item.item--tall { grid-row: span 2; } */
+
 .gallery-item {
   position: relative;
   border-radius: var(--radius-lg);
@@ -720,10 +763,24 @@ section[id] { scroll-margin-top: 110px; }
 }
 .gallery-item:hover::before { transform: translateX(130%); }
 
-.gallery-media { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-.gallery-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-.gallery-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-.media-glyph { color: rgba(255, 255, 255, 0.5); filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.25)); }
+.gallery-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px; /* فقط یه fallback برای وقتی عکس واقعی هنوز لود نشده/شکسته‌ست */
+  background-size: cover;
+  background-position: center;
+}
+.gallery-media img,
+.gallery-media video {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto; /* این خط کلیدیه: ارتفاع کارت از ratio خود عکس/ویدیو میاد، نه یک سایز ثابت */
+}
+.media-glyph { position: absolute; inset: 0; z-index: 0; display: flex; justify-content: center; color: rgba(255, 255, 255, 0.5); filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.25)); }
 
 .gm--1 { background: linear-gradient(135deg, #6b0f3e, #d52678 55%, #2c0616); }
 .gm--2 { background: linear-gradient(140deg, #ca3a86, #ff2f93 55%, #34104f); }
@@ -936,7 +993,8 @@ a.detail-item:hover .detail-icon { background: var(--gradient-brand); color: #ff
 .lightbox-media {
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  /* Allow the lightbox to size based on the image/video rather than forcing a 4:3 crop */
+  aspect-ratio: auto;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px;
 }

@@ -99,10 +99,14 @@
       </nav>
 
       <div class="header-right-actions">
-        <div class="lang-switch" id="langBtn" aria-label="Toggle Language">
-          <div class="lang-switch-slider"></div>
-          <span class="lang-option lang-fa">FA</span>
-          <span class="lang-option lang-en">EN</span>
+        <div class="lang-select" id="langSelect">
+          <button class="lang-select-btn" id="langSelectBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="انتخاب زبان">
+            <svg class="lang-select-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M3 12h18M12 3c2.4 2.5 3.8 5.5 3.8 9s-1.4 6.5-3.8 9c-2.4-2.5-3.8-5.5-3.8-9s1.4-6.5 3.8-9z" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            <span class="lang-select-current" id="langSelectCurrent">FA</span>
+          </button>
         </div>
         <a href="#collab" class="btn btn--ghost header-cta">
           <span data-i18n="header.cta">شروع پروژه</span>
@@ -114,6 +118,12 @@
       </button>
     </div>
   </header>
+
+  <ul class="lang-dropdown glass-panel" id="langDropdown" role="listbox" aria-hidden="true" aria-label="انتخاب زبان">
+    <li role="option" data-lang="fa" aria-selected="true">FA</li>
+    <li role="option" data-lang="en" aria-selected="false">EN</li>
+    <li role="option" data-lang="ar" aria-selected="false">AR</li>
+  </ul>
 
   <main id="main-content">
 
@@ -135,8 +145,9 @@
         </h1>
 
         <p class="hero-subtitle" data-reveal data-i18n="hero.subtitle">
-          طراحی گرافیک جایی‌ست که خلاقیت با دقت و حرفه‌ای‌گری پیوند می‌خورد؛
-          من به برندها هویت می‌بخشم و ایده‌های شما را به آثاری بصری ماندگار تبدیل می‌کنم.
+          ساخت تبلیغات بصری
+          طراحی، گرافیک، چاپ، انیمیشن
+          با یه ظاهر حرفه‌ای، بیشتر دیده شو و بیشتر بفروش
         </p>
 
         <div class="hero-actions" data-reveal>
@@ -270,154 +281,306 @@
     </section>
 
     <!-- ===================== GALLERY ===================== -->
-    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
-      <div class="section-head">
-        <p class="eyebrow eyebrow--center" data-reveal><span class="eyebrow-dot"></span><span data-i18n="gallery.eyebrow">گالری من</span></p>
-        <h2 class="section-title" id="gallery-title" data-reveal data-i18n="gallery.title">نمونه کارها</h2>
-        <p class="section-desc" data-reveal data-i18n="gallery.desc">گزیده‌ای از پروژه‌های طراحی لوگو، پوستر و کارت ویزیت</p>
+
+
+<!-- ===================== GALLERY ===================== -->
+<section class="gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="section-head">
+    <p class="eyebrow eyebrow--center" data-reveal><span class="eyebrow-dot"></span><span data-i18n="gallery.eyebrow">گالری من</span></p>
+    <h2 class="section-title" id="gallery-title" data-reveal data-i18n="gallery.title">نمونه کارها</h2>
+    <p class="section-desc" data-reveal data-i18n="gallery.desc">گزیده‌ای از پروژه‌های طراحی لوگو، پوستر و کارت ویزیت</p>
+  </div>
+
+  <div class="gallery-filters" data-reveal role="tablist" aria-label="فیلتر نمونه کارها">
+    <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="gallery.filter.all">همه</button>
+    <button class="filter-btn" data-filter="logo" role="tab" aria-selected="false" data-i18n="gallery.filter.logo">لوگو</button>
+    <button class="filter-btn" data-filter="poster" role="tab" aria-selected="false" data-i18n="gallery.filter.poster">پوستر</button>
+    <button class="filter-btn" data-filter="card" role="tab" aria-selected="false" data-i18n="gallery.filter.card">کارت ویزیت</button>
+    <button class="filter-btn" data-filter="animation" role="tab" aria-selected="false" data-i18n="gallery.filter.animation">انیمیشن</button>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid" data-reveal>
+    <!-- Gallery items — replace .gallery-media background/img with real project photos later -->
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-01.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
       </div>
-
-      <div class="gallery-filters" data-reveal role="tablist" aria-label="فیلتر نمونه کارها">
-        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="gallery.filter.all">همه</button>
-        <button class="filter-btn" data-filter="logo" role="tab" aria-selected="false" data-i18n="gallery.filter.logo">لوگو</button>
-        <button class="filter-btn" data-filter="poster" role="tab" aria-selected="false" data-i18n="gallery.filter.poster">پوستر</button>
-        <button class="filter-btn" data-filter="card" role="tab" aria-selected="false" data-i18n="gallery.filter.card">کارت ویزیت</button>
-        <button class="filter-btn" data-filter="animation" role="tab" aria-selected="false" data-i18n="gallery.filter.animation">انیمیشن</button>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">املاک منصوری</h3>
       </div>
+    </article>
 
-      <div class="gallery-grid" id="galleryGrid" data-reveal>
-        <!-- Gallery items — replace .gallery-media background/img with real project photos later -->
-        <article class="gallery-item item--wide" data-category="logo" tabindex="0">
-          <div class="gallery-media gm--1">
-            <img src="assets/images/gallery/logo-01.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
-            <h3 data-i18n="gallery.items.lamira.title">هویت بصری کافه لمیرا</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item item--tall" data-category="poster" tabindex="0">
-          <div class="gallery-media gm--2">
-            <img src="assets/images/gallery/poster-01.jpg" alt="طراحی پوستر پروژه یک" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
-            <h3 data-i18n="gallery.items.avaran.title">کمپین تابستانه آوران</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item" data-category="card" tabindex="0">
-          <div class="gallery-media gm--3">
-            <img src="assets/images/gallery/card-01.jpg" alt="طراحی کارت ویزیت پروژه یک" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2.2" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 10.5h19" stroke="currentColor" stroke-width="1.3"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.saya.tag">کارت ویزیت</span>
-            <h3 data-i18n="gallery.items.saya.title">استودیو معماری سایه</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item" data-category="logo" tabindex="0">
-          <div class="gallery-media gm--4">
-            <img src="assets/images/gallery/logo-02.jpg" alt="طراحی لوگو پروژه دو" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.vesta.tag">لوگو</span>
-            <h3 data-i18n="gallery.items.vesta.title">برند آرایشی وستا</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item item--wide" data-category="poster" tabindex="0">
-          <div class="gallery-media gm--5">
-            <img src="assets/images/gallery/poster-02.jpg" alt="طراحی پوستر پروژه دو" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.nayan.tag">پوستر</span>
-            <h3 data-i18n="gallery.items.nayan.title">جشنواره موسیقی نایان</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item item--tall" data-category="card" tabindex="0">
-          <div class="gallery-media gm--6">
-            <img src="assets/images/gallery/card-02.jpg" alt="طراحی کارت ویزیت پروژه دو" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2.2" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 10.5h19" stroke="currentColor" stroke-width="1.3"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.edalat.tag">کارت ویزیت</span>
-            <h3 data-i18n="gallery.items.edalat.title">وکالت خانه عدالت</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item" data-category="logo" tabindex="0">
-          <div class="gallery-media gm--7">
-            <img src="assets/images/gallery/logo-03.jpg" alt="طراحی لوگو پروژه سه" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.zeitun.tag">لوگو</span>
-            <h3 data-i18n="gallery.items.zeitun.title">رستوران زیتون سیاه</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item" data-category="poster" tabindex="0">
-          <div class="gallery-media gm--8">
-            <img src="assets/images/gallery/poster-03.jpg" alt="طراحی پوستر پروژه سه" loading="lazy" onerror="this.style.display='none'">
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.mah.tab.tag">پوستر</span>
-            <h3 data-i18n="gallery.items.mah.tab.title">نمایشگاه هنری مهتاب</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item item--wide" data-category="animation" tabindex="0">
-          <div class="gallery-media gm--9">
-            <video src="assets/images/gallery/animation-01.mp4" poster="assets/images/gallery/animation-01.jpg" muted loop playsinline preload="metadata" onerror="this.style.display='none'"></video>
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M3 9l1.5-4.5h4L7 9M9 9l1.5-4.5h4L13 9M15 9l1.5-4.5h3.5L19.5 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.caramella.tag">انیمیشن</span>
-            <h3 data-i18n="gallery.items.caramella.title">ریلز تبلیغاتی برند کارامللا</h3>
-          </div>
-        </article>
-
-        <article class="gallery-item" data-category="animation" tabindex="0">
-          <div class="gallery-media gm--10">
-            <video src="assets/images/gallery/animation-02.mp4" poster="assets/images/gallery/animation-02.jpg" muted loop playsinline preload="metadata" onerror="this.style.display='none'"></video>
-            <span class="media-glyph" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M3 9l1.5-4.5h4L7 9M9 9l1.5-4.5h4L13 9M15 9l1.5-4.5h3.5L19.5 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-          <div class="gallery-caption">
-            <span class="gallery-tag" data-i18n="gallery.items.peyvand.tag">انیمیشن</span>
-            <h3 data-i18n="gallery.items.peyvand.title">موشن گرافیک اپلیکیشن پیوند</h3>
-          </div>
-        </article>
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--2">
+        <img src="assets/images/gallery/poster-01.jpg" alt="طراحی پوستر پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
       </div>
-    </section>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.avaran.title">شکلات coco</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="card" tabindex="0">
+      <div class="gallery-media gm--3">
+        <img src="assets/images/gallery/card-01.jpg" alt="طراحی کارت ویزیت پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2.2" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 10.5h19" stroke="currentColor" stroke-width="1.3"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.saya.tag">کارت ویزیت</span>
+        <h3 data-i18n="gallery.items.saya.title">دکتر آرمانی</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--4">
+        <img src="assets/images/gallery/logo-02.jpg" alt="طراحی لوگو پروژه دو" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.vesta.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.vesta.title">شیراز ملک</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="card" tabindex="0">
+      <div class="gallery-media gm--6">
+        <img src="assets/images/gallery/card-02.jpg" alt="طراحی کارت ویزیت پروژه دو" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2.2" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 10.5h19" stroke="currentColor" stroke-width="1.3"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.edalat.tag">کارت ویزیت</span>
+        <h3 data-i18n="gallery.items.edalat.title">شرکت فنی مهندسی کارنو</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--7">
+        <img src="assets/images/gallery/logo-03.jpg" alt="طراحی لوگو پروژه سه" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.zeitun.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.zeitun.title">هاشمی</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--8">
+        <img src="assets/images/gallery/poster-03.jpg" alt="طراحی پوستر پروژه سه" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.mah.tab.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.mah.tab.title">پیانو ملوویا</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="animation" tabindex="0">
+      <div class="gallery-media gm--9">
+        <video src="assets/images/gallery/animation-01.mp4" poster="assets/images/gallery/animation-01.jpg" muted loop playsinline preload="metadata" onerror="this.style.display='none'"></video>
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M3 9l1.5-4.5h4L7 9M9 9l1.5-4.5h4L13 9M15 9l1.5-4.5h3.5L19.5 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.caramella.tag">انیمیشن</span>
+        <h3 data-i18n="gallery.items.caramella.title">ادیت موشن</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="animation" tabindex="0">
+      <div class="gallery-media gm--10">
+        <video src="assets/images/gallery/animation-02.mp4" poster="assets/images/gallery/animation-02.jpg" muted loop playsinline preload="metadata" onerror="this.style.display='none'"></video>
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M3 9l1.5-4.5h4L7 9M9 9l1.5-4.5h4L13 9M15 9l1.5-4.5h3.5L19.5 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.peyvand.tag">انیمیشن</span>
+        <h3 data-i18n="gallery.items.peyvand.title">هایپرمارکت</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--2">
+        <img src="assets/images/gallery/poster-04.jpg" alt="طراحی پوستر پروژه چهار" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.avaran.title">هنگ درام نوا</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--2">
+        <img src="assets/images/gallery/poster-05.jpg" alt="طراحی پوستر پروژه چهار" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.avaran.title">میرفردی</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--2">
+        <img src="assets/images/gallery/poster-06.jpg" alt="طراحی پوستر پروژه چهار" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.avaran.title">نوبرانه جمشیدی</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--2">
+        <img src="assets/images/gallery/poster-08.jpg" alt="طراحی پوستر پروژه چهار" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.avaran.title">موتور سیکلت برتر</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-04.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">لنا</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-05.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">نورا</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-06.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">املاک منصوری</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-07.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">املاک منصوری</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-08.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">املاک منصوری</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-09.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">املاک منصوری</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="logo" tabindex="0">
+      <div class="gallery-media gm--1">
+        <img src="assets/images/gallery/logo-10.jpg" alt="طراحی لوگو پروژه یک" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.lamira.tag">لوگو</span>
+        <h3 data-i18n="gallery.items.lamira.title">املاک منصوری</h3>
+      </div>
+    </article>
+
+    <article class="gallery-item" data-category="poster" tabindex="0">
+      <div class="gallery-media gm--2">
+        <img src="assets/images/gallery/poster-07.jpg" alt="طراحی پوستر پروژه چهار" loading="lazy" onerror="this.style.display='none'">
+        <span class="media-glyph" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-tag" data-i18n="gallery.items.avaran.tag">پوستر</span>
+        <h3 data-i18n="gallery.items.avaran.title">کافه پدر</h3>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+
+
+
 
     <!-- ===================== COLLAB / CONSULTATION FORM ===================== -->
     <section class="collab" id="collab" aria-labelledby="collab-title">
@@ -485,7 +648,7 @@
         <div class="contact-brand">
           <span class="logo-mark logo-mark--lg" aria-hidden="true"><img src="assets/images/nedalogo.png" alt="" draggable="false"></span>
           <h2 id="contact-title" data-i18n="contact.name">ندا</h2>
-          <p data-i18n="contact.role">طراح گرافیک &amp; کارگردان هنری</p>
+          <p data-i18n="contact.role">طراح گرافیک &amp; تولیدکننده Ai</p>
         </div>
 
         <div class="contact-details">

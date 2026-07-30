@@ -61,7 +61,7 @@
       'gallery.filter.card': 'کارت ویزیت',
       'gallery.filter.animation': 'انیمیشن',
       'gallery.items.lamira.tag': 'لوگو',
-      'gallery.items.lamira.title': 'هویت بصری کافه لمیرا',
+      'gallery.items.lamira.title': 'املاک منصوری',
       'gallery.items.avaran.tag': 'پوستر',
       'gallery.items.avaran.title': 'کمپین تابستانه آوران',
       'gallery.items.saya.tag': 'کارت ویزیت',
@@ -165,7 +165,7 @@
       'gallery.filter.card': 'Business Card',
       'gallery.filter.animation': 'Animation',
       'gallery.items.lamira.tag': 'Logo',
-      'gallery.items.lamira.title': 'Lamira Cafe Brand Identity',
+      'gallery.items.lamira.title': 'Mansuri estate agency',
       'gallery.items.avaran.tag': 'Poster',
       'gallery.items.avaran.title': 'Avaran Summer Campaign',
       'gallery.items.saya.tag': 'Business Card',
@@ -243,7 +243,7 @@
       'stats.satisfaction': 'رضا العملاء',
       'about.eyebrow': 'تعرف عليّ أكثر',
       'about.title': 'من أنا',
-      'about.bio1': 'أنا ندى. ولدت عام ۱۳۷۰ وتخرجت في بكالوريوس التصميم الجرافيكي.',
+      'about.bio1': 'أنا ندى. ولدت عام 1411 وتخرجت في بكالوريوس التصميم الجرافيكي.',
       'about.bio2': 'لدي أكثر من ثلاث سنوات من الخبرة في تصميم الجرافيك، الشعارات، المونتاج وإنشاء الرسوم المتحركة. كما أنني أكملت دورات متخصصة في المونتاج باستخدام Adobe Premiere، وتصوير الهاتف، والذكاء الاصطناعي.',
       'about.bio3': 'في كل مشروع أسعى لتقديم تصميمات محترفة ودائمة مع الإبداع والدقة وفهم احتياجات كل عمل.',
       'about.bio4': 'أنا هنا معك بالإبداع والدقة وفهم احتياجاتك لمساعدتك على النمو والظهور.',
@@ -269,7 +269,7 @@
       'gallery.filter.card': 'بطاقة عمل',
       'gallery.filter.animation': 'رسوم متحركة',
       'gallery.items.lamira.tag': 'شعار',
-      'gallery.items.lamira.title': 'الهوية البصرية لمقهى لاميرا',
+      'gallery.items.lamira.title': 'وكالة المنصوري العقارية',
       'gallery.items.avaran.tag': 'ملصق',
       'gallery.items.avaran.title': 'حملة الصيف أفاران',
       'gallery.items.saya.tag': 'بطاقة عمل',
@@ -295,7 +295,7 @@
       'collab.point2': 'رد سريع وواضح',
       'collab.point3': 'تصميم مخصص يتناسب مع علامتك',
       'form.name.label': 'الاسم الكامل',
-      'form.name.placeholder': 'مثلاً: سارة محمدي',
+      'form.name.placeholder': 'مثلاً: نادية عبده',
       'form.contact.label': 'رقم الهاتف أو البريد الإلكتروني',
       'form.contact.placeholder': '٠٩١٢ ٠٠٠ ٠٠٠٠',
       'form.projectType.label': 'نوع المشروع',
@@ -710,9 +710,16 @@ void main() {
     }
     htmlEl.style.fontFamily = lang === 'fa' || lang === 'ar' ? 'var(--font-fa)' : 'var(--font-latin)';
 
-    const langSwitch = document.getElementById('langBtn');
-    if (langSwitch) {
-      langSwitch.setAttribute('data-lang', lang);
+    const langSelectCurrent = document.getElementById('langSelectCurrent');
+    if (langSelectCurrent) {
+      langSelectCurrent.textContent = lang.toUpperCase();
+    }
+
+    const langDropdown = document.getElementById('langDropdown');
+    if (langDropdown) {
+      langDropdown.querySelectorAll('li').forEach((li) => {
+        li.setAttribute('aria-selected', String(li.getAttribute('data-lang') === lang));
+      });
     }
 
     const elements = document.querySelectorAll('[data-i18n]');
@@ -904,9 +911,10 @@ void main() {
     lightboxMedia.innerHTML = '';
     if (media) {
       const clone = media.cloneNode(true);
+      // Let the cloned media keep its intrinsic aspect ratio inside the lightbox.
       clone.style.position = 'static';
-      clone.style.width = '100%';
-      clone.style.height = '100%';
+      clone.style.maxWidth = '100%';
+      clone.style.height = 'auto';
       lightboxMedia.appendChild(clone);
 
       const paletteClass = Array.from(media.classList).find((c) => c.startsWith('gm--'));
@@ -1040,20 +1048,79 @@ void main() {
     });
   }
 
-  // ---------- Language toggle button ----------
-  const langBtn = document.getElementById('langBtn');
-  if (langBtn) {
-    langBtn.addEventListener('click', () => {
-      const newLang = currentLang === 'fa' ? 'en' : 'fa';
-      setLanguage(newLang);
+  // ---------- Language selector (dropdown) ----------
+  const langSelectBtn = document.getElementById('langSelectBtn');
+  const langDropdown = document.getElementById('langDropdown');
+
+  const positionLangDropdown = () => {
+    if (!langSelectBtn || !langDropdown) return;
+    const rect = langSelectBtn.getBoundingClientRect();
+    const dropdownWidth = langDropdown.offsetWidth || 84;
+    let left = rect.left + rect.width / 2 - dropdownWidth / 2;
+    left = Math.max(8, Math.min(left, window.innerWidth - dropdownWidth - 8));
+    langDropdown.style.top = `${rect.bottom + 10}px`;
+    langDropdown.style.left = `${left}px`;
+  };
+
+  const closeLangDropdown = () => {
+    if (!langDropdown || !langSelectBtn) return;
+    langDropdown.classList.remove('is-open');
+    langDropdown.setAttribute('aria-hidden', 'true');
+    langSelectBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  const openLangDropdown = () => {
+    if (!langDropdown || !langSelectBtn) return;
+    positionLangDropdown();
+    langDropdown.classList.add('is-open');
+    langDropdown.setAttribute('aria-hidden', 'false');
+    langSelectBtn.setAttribute('aria-expanded', 'true');
+  };
+
+  if (langSelectBtn && langDropdown) {
+    langSelectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = langDropdown.classList.contains('is-open');
+      if (isOpen) {
+        closeLangDropdown();
+      } else {
+        openLangDropdown();
+      }
     });
+
+    langDropdown.querySelectorAll('li[data-lang]').forEach((li) => {
+      li.addEventListener('click', () => {
+        const selectedLang = li.getAttribute('data-lang');
+        if (selectedLang) {
+          setLanguage(selectedLang);
+        }
+        closeLangDropdown();
+        langSelectBtn.focus();
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langDropdown.classList.contains('is-open')) return;
+      if (e.target === langSelectBtn || langSelectBtn.contains(e.target) || langDropdown.contains(e.target)) return;
+      closeLangDropdown();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && langDropdown.classList.contains('is-open')) {
+        closeLangDropdown();
+        langSelectBtn.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (langDropdown.classList.contains('is-open')) positionLangDropdown();
+    });
+    window.addEventListener('scroll', () => {
+      if (langDropdown.classList.contains('is-open')) positionLangDropdown();
+    }, { passive: true });
   }
 
   // ---------- Initialize everything ----------
-  const langSwitch = document.getElementById('langBtn');
-  if (langSwitch) {
-    langSwitch.setAttribute('data-lang', currentLang);
-  }
   setLanguage(currentLang);
   initYear();
   initHeroFloatingLines();
