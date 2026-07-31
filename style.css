@@ -975,32 +975,51 @@ a.detail-item:hover .detail-icon { background: var(--gradient-brand); color: #ff
 .lightbox {
   position: fixed; inset: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: center;
-  padding: 24px;
+  padding: 40px 24px;
   opacity: 0; visibility: hidden;
   transition: opacity 0.4s var(--ease-out);
 }
 .lightbox.is-open { opacity: 1; visibility: visible; }
-.lightbox-backdrop { position: absolute; inset: 0; background: rgba(8, 3, 7, 0.85); backdrop-filter: blur(10px); }
-.lightbox-content.glass-panel {
+.lightbox-backdrop { position: absolute; inset: 0; background: rgba(8, 3, 7, 0.9); backdrop-filter: blur(10px); }
+.lightbox-content {
   position: relative;
-  max-width: 620px; width: 100%;
-  padding: 26px;
-  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: min(92vw, 900px);
+  max-height: 100%;
   transform: scale(0.9);
   transition: transform 0.4s var(--ease-spring);
 }
 .lightbox.is-open .lightbox-content { transform: scale(1); }
 .lightbox-media {
-  border-radius: 20px;
-  overflow: hidden;
-  /* Allow the lightbox to size based on the image/video rather than forcing a 4:3 crop */
-  aspect-ratio: auto;
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 18px;
+  max-width: 100%;
+  min-height: 0;
+  /* No background, no border, no padding — just a layout box for the media itself */
+}
+/* No colored background from the .gm--N placeholder classes inside the lightbox —
+   in this context we only ever show a real image/video, never the gallery's
+   "missing image" placeholder gradient. */
+.lightbox-media .gallery-media { background: none; min-height: 0; }
+#lightboxMedia img,
+#lightboxMedia video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  /* Safe margin from the top/bottom of the viewport — leaves room for the
+     caption and the lightbox's own padding, no matter the media's own ratio. */
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  border-radius: 16px;
+  margin: 0 auto;
 }
 .lightbox-close {
-  position: absolute; top: -14px; left: -14px;
-  width: 40px; height: 40px;
+  position: fixed;
+  top: 24px; inset-inline-end: 24px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: var(--gradient-brand);
   color: #fff; border: none; font-size: 20px;
@@ -1008,7 +1027,7 @@ a.detail-item:hover .detail-icon { background: var(--gradient-brand); color: #ff
   box-shadow: var(--glow-sm);
   z-index: 5;
 }
-.lightbox-caption { text-align: center; color: var(--pearl); font-weight: 600; }
+.lightbox-caption { text-align: center; color: var(--pearl); font-weight: 600; flex-shrink: 0; }
 
 /* ==========================================================================
    RESPONSIVE

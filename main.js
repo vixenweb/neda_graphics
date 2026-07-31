@@ -909,16 +909,15 @@ void main() {
     const tag = item.querySelector('.gallery-tag');
 
     lightboxMedia.innerHTML = '';
+    lightboxMedia.className = 'lightbox-media';
     if (media) {
       const clone = media.cloneNode(true);
       // Let the cloned media keep its intrinsic aspect ratio inside the lightbox.
       clone.style.position = 'static';
       clone.style.maxWidth = '100%';
       clone.style.height = 'auto';
+      clone.style.background = 'none';
       lightboxMedia.appendChild(clone);
-
-      const paletteClass = Array.from(media.classList).find((c) => c.startsWith('gm--'));
-      lightboxMedia.className = 'lightbox-media' + (paletteClass ? ` ${paletteClass}` : '');
 
       const video = clone.querySelector('video');
       if (video) {
