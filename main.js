@@ -61,35 +61,25 @@
       'gallery.filter.card': 'کارت ویزیت',
       'gallery.filter.animation': 'انیمیشن',
       'gallery.items.lamira.tag': 'لوگو',
+      'gallery.items.lamira.title': 'املاک منصوری',
       'gallery.items.avaran.tag': 'پوستر',
+      'gallery.items.avaran.title': 'کمپین تابستانه آوران',
       'gallery.items.saya.tag': 'کارت ویزیت',
+      'gallery.items.saya.title': 'استودیو معماری سایه',
       'gallery.items.vesta.tag': 'لوگو',
+      'gallery.items.vesta.title': 'برند آرایشی وستا',
+      'gallery.items.nayan.tag': 'پوستر',
+      'gallery.items.nayan.title': 'جشنواره موسیقی نایان',
       'gallery.items.edalat.tag': 'کارت ویزیت',
+      'gallery.items.edalat.title': 'وکالت خانه عدالت',
       'gallery.items.zeitun.tag': 'لوگو',
+      'gallery.items.zeitun.title': 'رستوران زیتون سیاه',
       'gallery.items.mah.tab.tag': 'پوستر',
+      'gallery.items.mah.tab.title': 'نمایشگاه هنری مهتاب',
       'gallery.items.caramella.tag': 'انیمیشن',
+      'gallery.items.caramella.title': 'ریلز تبلیغاتی برند کارامللا',
       'gallery.items.peyvand.tag': 'انیمیشن',
-      'gallery.items.logo01.title': 'املاک منصوری',
-      'gallery.items.poster01.title': 'شکلات coco',
-      'gallery.items.card01.title': 'دکتر آرمانی',
-      'gallery.items.logo02.title': 'شیراز ملک',
-      'gallery.items.card02.title': 'شرکت فنی مهندسی کارنو',
-      'gallery.items.logo03.title': 'املاک هاشمی',
-      'gallery.items.poster03.title': 'پیانو ملوویا',
-      'gallery.items.animation01.title': 'ادیت موشن',
-      'gallery.items.animation02.title': 'هایپرمارکت',
-      'gallery.items.poster04.title': 'هنگ درام نوا',
-      'gallery.items.poster05.title': 'املاک میرفردی',
-      'gallery.items.poster06.title': 'نوبرانه جمشیدی',
-      'gallery.items.poster08.title': 'موتور سیکلت برتر',
-      'gallery.items.logo04.title': 'لنا VIP',
-      'gallery.items.logo05.title': 'کافه نورا',
-      'gallery.items.logo06.title': 'کافی تایم',
-      'gallery.items.logo07.title': 'توزیع قطعات موبایل Fix Phone',
-      'gallery.items.logo08.title': 'املاک پژمان میرفردی',
-      'gallery.items.logo09.title': 'آیریک',
-      'gallery.items.logo10.title': 'نوبرانه جمشیدی',
-      'gallery.items.poster07.title': 'کافه پدر',
+      'gallery.items.peyvand.title': 'موشن گرافیک اپلیکیشن پیوند',
       'collab.eyebrow': 'همکاری',
       'collab.title': 'من کمکت می‌کنم',
       'collab.desc': 'ایده‌ات رو با من در میان بذار. کافیه چند خط درباره پروژه‌ات بنویسی؛ من ظرف کمتر از ۲۴ ساعت باهات تماس می‌گیرم تا با هم مسیر رسیدن به یک اثر خاص رو شروع کنیم.',
@@ -175,35 +165,25 @@
       'gallery.filter.card': 'Business Card',
       'gallery.filter.animation': 'Animation',
       'gallery.items.lamira.tag': 'Logo',
+      'gallery.items.lamira.title': 'Mansuri estate agency',
       'gallery.items.avaran.tag': 'Poster',
+      'gallery.items.avaran.title': 'Avaran Summer Campaign',
       'gallery.items.saya.tag': 'Business Card',
+      'gallery.items.saya.title': 'Saya Architecture Studio',
       'gallery.items.vesta.tag': 'Logo',
+      'gallery.items.vesta.title': 'Vesta Cosmetics Brand',
+      'gallery.items.nayan.tag': 'Poster',
+      'gallery.items.nayan.title': 'Nayan Music Festival',
       'gallery.items.edalat.tag': 'Business Card',
+      'gallery.items.edalat.title': 'Edalat Law Firm',
       'gallery.items.zeitun.tag': 'Logo',
+      'gallery.items.zeitun.title': 'Black Olive Restaurant',
       'gallery.items.mah.tab.tag': 'Poster',
+      'gallery.items.mah.tab.title': 'Mahtab Art Exhibition',
       'gallery.items.caramella.tag': 'Animation',
+      'gallery.items.caramella.title': 'Caramella Brand Promo Reel',
       'gallery.items.peyvand.tag': 'Animation',
-      'gallery.items.logo01.title': 'Mansouri Real Estate',
-      'gallery.items.poster01.title': 'Coco Chocolate',
-      'gallery.items.card01.title': 'Dr. Armani',
-      'gallery.items.logo02.title': 'Shiraz Melk Real Estate',
-      'gallery.items.card02.title': 'Carno Engineering Co.',
-      'gallery.items.logo03.title': 'Hashemi',
-      'gallery.items.poster03.title': 'Melovia Piano',
-      'gallery.items.animation01.title': 'Motion Edit',
-      'gallery.items.animation02.title': 'Hypermarket',
-      'gallery.items.poster04.title': 'Nava Hang Drum Academy',
-      'gallery.items.poster05.title': 'Mirfardi Real Estate',
-      'gallery.items.poster06.title': 'Jamshidi Fresh Produce',
-      'gallery.items.poster08.title': 'Bartar Motorcycles',
-      'gallery.items.logo04.title': 'Lena VIP',
-      'gallery.items.logo05.title': 'Nora Café',
-      'gallery.items.logo06.title': 'CoffeeTime',
-      'gallery.items.logo07.title': 'ManstFix Phone Mobile Parts Distributionate',
-      'gallery.items.logo08.title': 'Pezhman Mirfardi Real Estate',
-      'gallery.items.logo09.title': 'َAyrik',
-      'gallery.items.logo10.title': 'Nobaraneh Jamshidi',
-      'gallery.items.poster07.title': 'Pedar Café',
+      'gallery.items.peyvand.title': 'Peyvand App Motion Graphic',
       'collab.eyebrow': 'Collaboration',
       'collab.title': 'I Can Help You',
       'collab.desc': "Share your idea with me. Just write a few lines about your project; I'll contact you in less than 24 hours so we can start the path to a special work together.",
@@ -289,35 +269,25 @@
       'gallery.filter.card': 'بطاقة عمل',
       'gallery.filter.animation': 'رسوم متحركة',
       'gallery.items.lamira.tag': 'شعار',
+      'gallery.items.lamira.title': 'وكالة المنصوري العقارية',
       'gallery.items.avaran.tag': 'ملصق',
+      'gallery.items.avaran.title': 'حملة الصيف أفاران',
       'gallery.items.saya.tag': 'بطاقة عمل',
+      'gallery.items.saya.title': 'هوية استوديو العمارة سايا',
       'gallery.items.vesta.tag': 'شعار',
+      'gallery.items.vesta.title': 'علامة التجميل فيستا',
+      'gallery.items.nayan.tag': 'ملصق',
+      'gallery.items.nayan.title': 'مهرجان الموسيقى نايان',
       'gallery.items.edalat.tag': 'بطاقة عمل',
+      'gallery.items.edalat.title': 'مكتب المحاماة عدالة',
       'gallery.items.zeitun.tag': 'شعار',
+      'gallery.items.zeitun.title': 'مطعم زيتون أسود',
       'gallery.items.mah.tab.tag': 'ملصق',
+      'gallery.items.mah.tab.title': 'معرض الفن مهتاب',
       'gallery.items.caramella.tag': 'رسوم متحركة',
+      'gallery.items.caramella.title': 'فيديو كاراميلا الترويجي المتحرك',
       'gallery.items.peyvand.tag': 'رسوم متحركة',
-      'gallery.items.logo01.title': 'وكالة المنصوري العقارية',
-      'gallery.items.poster01.title': 'شوكولاتة كوكو',
-      'gallery.items.card01.title': 'الدكتور أرماني',
-      'gallery.items.logo02.title': 'شيراز ملك العقارية',
-      'gallery.items.card02.title': 'شركة كارنو للهندسة الفنية',
-      'gallery.items.logo03.title': 'وكالة الهاشمی العقارية',
-      'gallery.items.poster03.title': 'بيانو ميلوفيا',
-      'gallery.items.animation01.title': 'مونتاج موشن',
-      'gallery.items.animation02.title': 'هايبر ماركت',
-      'gallery.items.poster04.title': 'أكاديمية نَوا للهانغ درام',
-      'gallery.items.poster05.title': 'وكالة مير فردي العقارية',
-      'gallery.items.poster06.title': 'منتجات جمشيدي الطازجة',
-      'gallery.items.poster08.title': 'دراجات برتر النارية',
-      'gallery.items.logo04.title': 'لينا VIP',
-      'gallery.items.logo05.title': 'مقهى نورا',
-      'gallery.items.logo06.title': 'مقهى كوفي تايم',
-      'gallery.items.logo07.title': 'فيكس فون لتوزيع قطع غيار الهواتف',
-      'gallery.items.logo08.title': 'العقارات بيجمان ميرفردي',
-      'gallery.items.logo09.title': 'آيريك',
-      'gallery.items.logo10.title': 'نوبارانه جمشيدي',
-      'gallery.items.poster07.title': 'مقهى بيدر',
+      'gallery.items.peyvand.title': 'رسوم متحركة لتطبيق پیوند',
       'collab.eyebrow': 'تعاون',
       'collab.title': 'أنا هنا لأساعدك',
       'collab.desc': 'شارك فكرتك معي. اكتفِ بكتابة بضع سطور عن مشروعك؛ سأتواصل معك في أقل من ۲۴ ساعة حتى نبدأ معًا طريق خلق عمل مميز.',
@@ -387,6 +357,10 @@
       container.classList.add('hero-lines-fallback');
       return;
     }
+
+    // Respect the OS-level "reduce motion" setting: we still draw one static frame
+    // so the section isn't left blank, but we never start the animation loop below.
+    const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
     const vertexShader = `
 precision highp float;
@@ -605,7 +579,8 @@ void main() {
     camera.position.z = 1;
 
     const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'high-performance' });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    const pixelRatioCap = window.innerWidth <= 640 ? 1 : 1.5;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, pixelRatioCap));
     renderer.setSize(container.clientWidth || 1, container.clientHeight || 1, false);
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
@@ -684,11 +659,12 @@ void main() {
 
     let rafId = 0;
     let lastFrameTime = performance.now();
+    let isLoopRunning = false;
     // How quickly the bend/parallax intensity fades in and out — high enough to feel
     // immediate, but smooth enough to avoid a hard jump when the pointer leaves the hero.
     const fadeSpeed = 10;
 
-    const renderLoop = () => {
+    const renderFrame = () => {
       const now = performance.now();
       const delta = Math.min((now - lastFrameTime) / 1000, 0.1);
       lastFrameTime = now;
@@ -702,12 +678,69 @@ void main() {
       uniforms.parallaxOffset.value.copy(parallaxOffset);
 
       renderer.render(scene, camera);
+    };
+
+    const renderLoop = () => {
+      renderFrame();
       rafId = requestAnimationFrame(renderLoop);
     };
-    renderLoop();
+
+    const startLoop = () => {
+      if (isLoopRunning || prefersReducedMotion) return;
+      isLoopRunning = true;
+      lastFrameTime = performance.now();
+      renderLoop();
+    };
+
+    const stopLoop = () => {
+      isLoopRunning = false;
+      cancelAnimationFrame(rafId);
+    };
+
+    // Draw one static frame immediately so the section is never left blank —
+    // this covers both the reduced-motion case and the brief moment before the
+    // visibility observer below reports its first result.
+    renderFrame();
+
+    // The single biggest performance win here: a full-screen WebGL shader is expensive,
+    // so only keep it animating while the hero is actually scrolled into view AND the
+    // browser tab is active. Everywhere else on the page — i.e. most of the time on a
+    // long portfolio site — the GPU/CPU simply don't do this work at all.
+    const loopVisibility = { inViewport: true, tabVisible: document.visibilityState !== 'hidden' };
+    const syncLoopState = () => {
+      if (loopVisibility.inViewport && loopVisibility.tabVisible) {
+        startLoop();
+      } else {
+        stopLoop();
+      }
+    };
+
+    let heroVisibilityObserver = null;
+    if ('IntersectionObserver' in window) {
+      heroVisibilityObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            loopVisibility.inViewport = entry.isIntersecting;
+            syncLoopState();
+          });
+        },
+        { threshold: 0 }
+      );
+      heroVisibilityObserver.observe(heroSection);
+    } else {
+      syncLoopState();
+    }
+
+    const handleVisibilityChange = () => {
+      loopVisibility.tabVisible = document.visibilityState !== 'hidden';
+      syncLoopState();
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     const cleanup = () => {
-      cancelAnimationFrame(rafId);
+      stopLoop();
+      if (heroVisibilityObserver) heroVisibilityObserver.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (resizeObserver) {
         resizeObserver.disconnect();
       } else {
@@ -939,15 +972,16 @@ void main() {
     const tag = item.querySelector('.gallery-tag');
 
     lightboxMedia.innerHTML = '';
-    lightboxMedia.className = 'lightbox-media';
     if (media) {
       const clone = media.cloneNode(true);
       // Let the cloned media keep its intrinsic aspect ratio inside the lightbox.
       clone.style.position = 'static';
       clone.style.maxWidth = '100%';
       clone.style.height = 'auto';
-      clone.style.background = 'none';
       lightboxMedia.appendChild(clone);
+
+      const paletteClass = Array.from(media.classList).find((c) => c.startsWith('gm--'));
+      lightboxMedia.className = 'lightbox-media' + (paletteClass ? ` ${paletteClass}` : '');
 
       const video = clone.querySelector('video');
       if (video) {
@@ -1022,7 +1056,7 @@ void main() {
       });
 
       if (!isValid) {
-        formStatus.textContent = currentLang === 'fa' ? 'لطفاً همه فیلدهای الزامی را تسمیل کنید.' : 'Please fill in all required fields.';
+        formStatus.textContent = currentLang === 'fa' ? 'لطفاً همه فیلدهای الزامی را تکمیل کنید.' : 'Please fill in all required fields.';
         formStatus.classList.add('is-error');
         return;
       }
@@ -1154,3 +1188,17 @@ void main() {
   initYear();
   initHeroFloatingLines();
 })();
+
+/* ---------- Service worker (caching for fast repeat visits) ----------
+   Registered outside the main IIFE, after the page has finished loading,
+   so it never competes with anything above for bandwidth/CPU. See sw.js
+   for the actual caching strategy. Fails silently on http:// / file://
+   or any host that doesn't allow it — the site works exactly the same
+   either way, it just won't get the caching speed-up. */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {
+      /* no-op: caching is a bonus, not a requirement */
+    });
+  });
+}
