@@ -1,0 +1,33 @@
+# ==========================================================================
+# اختیاری: تنظیمات کش برای هاست‌هایی مثل Netlify یا Cloudflare Pages
+# اگه سایتتون رو روی Netlify میزبانی می‌کنید، این فایل رو با اسم "_headers"
+# (بدون پسوند) کنار index.html آپلود کنید.
+# اگه از هاست Apache/cPanel استفاده می‌کنید، به‌جاش از فایل .htaccess استفاده کنید.
+# ==========================================================================
+
+/*.css
+  Cache-Control: public, max-age=604800
+
+/*.js
+  Cache-Control: public, max-age=604800
+
+/*.jpg
+  Cache-Control: public, max-age=2592000
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000
+
+/*.png
+  Cache-Control: public, max-age=2592000
+
+/*.webp
+  Cache-Control: public, max-age=2592000
+
+/*.mp4
+  Cache-Control: public, max-age=2592000
+
+/index.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: no-cache
