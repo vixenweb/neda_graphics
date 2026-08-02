@@ -18,7 +18,7 @@
    fully reset (e.g. after a big redesign).
    ========================================================================== */
 
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v2';
 const CACHE_NAME = `neda-portfolio-${CACHE_VERSION}`;
 
 // Core files needed for the site shell. Everything else (gallery images,
@@ -26,8 +26,8 @@ const CACHE_NAME = `neda-portfolio-${CACHE_VERSION}`;
 const PRECACHE_URLS = [
   './',
   './index.html',
-  './style.css',
-  './main.js',
+  './style.css?v=2',
+  './main.js?v=2',
 ];
 
 self.addEventListener('install', (event) => {
