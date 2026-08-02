@@ -656,6 +656,13 @@ void main() {
 
     const heroSection = container.closest('.hero') || container;
 
+    // Mouse-driven bend/parallax is a desktop & tablet nicety — on phones there's no
+    // real cursor anyway, so we skip attaching these listeners entirely. That means
+    // one less thing to compute per touch/scroll interaction, keeping the hero lighter
+    // to start up on mobile. Uses the same 768px breakpoint as the rest of the site
+    // (where the layout already switches to the mobile nav).
+    const isMobileViewport = window.innerWidth <= 768;
+
     let targetBendInfluence = 0;
     const targetParallaxOffset = new THREE.Vector2(0, 0);
 
@@ -684,8 +691,10 @@ void main() {
       }
     };
 
-    heroSection.addEventListener('pointermove', handlePointerMove);
-    heroSection.addEventListener('pointerleave', handlePointerLeave);
+    if (!isMobileViewport) {
+      heroSection.addEventListener('pointermove', handlePointerMove);
+      heroSection.addEventListener('pointerleave', handlePointerLeave);
+    }
 
     let rafId = 0;
     let lastFrameTime = performance.now();
@@ -776,8 +785,10 @@ void main() {
       } else {
         window.removeEventListener('resize', resizeHandler);
       }
-      heroSection.removeEventListener('pointermove', handlePointerMove);
-      heroSection.removeEventListener('pointerleave', handlePointerLeave);
+      if (!isMobileViewport) {
+        heroSection.removeEventListener('pointermove', handlePointerMove);
+        heroSection.removeEventListener('pointerleave', handlePointerLeave);
+      }
       geometry.dispose();
       material.dispose();
       renderer.dispose();
