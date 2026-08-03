@@ -18,7 +18,7 @@
    fully reset (e.g. after a big redesign).
    ========================================================================== */
 
-const CACHE_VERSION = 'v5';
+const CACHE_VERSION = 'v6';
 const CACHE_NAME = `neda-portfolio-${CACHE_VERSION}`;
 
 // Core files needed for the site shell. Everything else (gallery images,
