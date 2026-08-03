@@ -342,11 +342,7 @@ section[id] { scroll-margin-top: 110px; }
 }
 .eyebrow--center { display: flex; width: fit-content; margin-inline: auto; }
 .eyebrow-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--gradient-brand);
-  box-shadow: 0 0 10px var(--neon-violet);
-  flex-shrink: 0;
+  display: none;
 }
 
 .section-head { text-align: center; max-width: 720px; margin: 0 auto 64px; }
