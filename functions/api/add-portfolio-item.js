@@ -27,6 +27,8 @@
  * -> AI binding, named exactly "AI") — see SETUP.md.
  */
 
+import { checkBasicAuth, unauthorizedResponse } from '../_shared/basicAuth.js';
+
 const GITHUB_API = 'https://api.github.com';
 
 const CATEGORY_ICONS = {
@@ -50,6 +52,13 @@ const CATEGORY_LABEL_FA = { logo: 'لوگو', poster: 'پوستر', card: 'کا�
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+
+  // Same password check as the /admin page — the browser normally already
+  // sent these credentials once when loading the form, so this should pass
+  // silently. Re-checking here means the API itself can never be called
+  // without a password, even if someone finds the URL directly.
+  const auth = checkBasicAuth(request, env);
+  if (!auth.ok) return unauthorizedResponse(auth.configured);
 
   try {
     const formData = await request.formData();
