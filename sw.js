@@ -18,7 +18,7 @@
    fully reset (e.g. after a big redesign).
    ========================================================================== */
 
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v8';
 const CACHE_NAME = `neda-portfolio-${CACHE_VERSION}`;
 
 // Core files needed for the site shell. Everything else (gallery images,
@@ -26,8 +26,8 @@ const CACHE_NAME = `neda-portfolio-${CACHE_VERSION}`;
 const PRECACHE_URLS = [
   './',
   './index.html',
-  './style.css?v=3',
-  './main.js?v=3',
+  './style.css?v=4',
+  './main.js?v=4',
 ];
 
 self.addEventListener('install', (event) => {
@@ -92,10 +92,20 @@ self.addEventListener('fetch', (event) => {
   // Formspree) must always go straight to the network untouched.
   if (request.method !== 'GET') return;
 
-  // Let cross-origin requests (Google Fonts, the Three.js CDN, Formspree, etc.)
-  // pass through with the same stale-while-revalidate benefit, but never let a
-  // failed cross-origin fetch break the page.
-  if (isHTMLRequest(request)) {
+  const url = new URL(request.url);
+  const isAppShell = isHTMLRequest(request) || url.pathname.endsWith('.css') || url.pathname.endsWith('.js');
+
+  // CSS/JS now get the SAME "always try the network first" treatment as HTML.
+  // This is a deliberate safety net: this site's caching has broken before
+  // when a version-query-string bump in index.html didn't get mirrored into
+  // this file's PRECACHE_URLS, leaving visitors stuck on an old cached
+  // version even after a hard refresh. Network-first means that class of bug
+  // can't happen again — an online visitor always gets the current file.
+  // Images/video/fonts still use stale-while-revalidate, which is safe for
+  // them because new gallery uploads always get a brand-new filename
+  // (logo-11.webp, never logo-01.webp overwritten), so there's nothing to
+  // go stale.
+  if (isAppShell) {
     event.respondWith(networkFirst(request));
   } else {
     event.respondWith(staleWhileRevalidate(request));

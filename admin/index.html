@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>افزودن نمونه‌کار جدید | پنل مدیریت ندا</title>
+<style>
+  :root {
+    --void: #0a0509;
+    --panel: #150a12;
+    --border: rgba(255,255,255,0.14);
+    --pearl: #f6f0f4;
+    --mist: #cfa9bf;
+    --pink: #d52678;
+    --pink-bright: #ff2f93;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Tahoma, "Vazirmatn", sans-serif;
+    background: var(--void);
+    color: var(--pearl);
+    max-width: 460px;
+    margin: 48px auto;
+    padding: 24px;
+    line-height: 1.7;
+  }
+  h1 { font-size: 19px; margin-bottom: 6px; }
+  p.sub { color: var(--mist); font-size: 13px; margin-bottom: 28px; }
+  form {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+  }
+  label { display: block; margin: 16px 0 6px; font-size: 14px; font-weight: 600; }
+  label:first-of-type { margin-top: 0; }
+  select, input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #1c0f18;
+    color: var(--pearl);
+    font-family: inherit;
+    font-size: 14px;
+  }
+  select:focus, input:focus {
+    outline: none;
+    border-color: var(--pink-bright);
+  }
+  .hint { color: var(--mist); font-size: 12px; margin-top: 5px; }
+  button {
+    margin-top: 24px;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--pink-bright), var(--pink));
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
+  #status {
+    margin-top: 18px;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    display: none;
+  }
+  #status.show { display: block; }
+  #status.ok { background: rgba(60, 200, 130, 0.12); color: #7fe3ae; }
+  #status.err { background: rgba(255, 80, 80, 0.12); color: #ff9d9d; }
+  #status.loading { background: rgba(255,255,255,0.06); color: var(--mist); }
+</style>
+</head>
+<body>
+  <h1>افزودن نمونه‌کار جدید</h1>
+  <p class="sub">این فرم مستقیم به سایت وصله و عنوان رو خودکار به انگلیسی و عربی هم ترجمه می‌کنه. بعد از ارسال، ظرف چند دقیقه نمونه‌کار جدید توی گالری سایت (هر سه زبان) نشون داده می‌شه فقط دقت داشته باشید که حجم هر فایل نباید زیاد باشه (برای عکس نهایتا100 کیلوبایت و ویدیو نهایتا 20 مگابایت)</p>
+
+  <form id="uploadForm">
+    <label for="category">دسته‌بندی</label>
+    <select id="category" name="category" required>
+      <option value="logo">لوگو</option>
+      <option value="poster">پوستر</option>
+      <option value="card">کارت ویزیت</option>
+      <option value="animation">انیمیشن</option>
+    </select>
+
+    <label for="title">عنوان کوتاه نمونه‌کار (فارسی)</label>
+    <input type="text" id="title" name="title" placeholder="مثلاً: برند کافه بهار" required>
+    <p class="hint">همین متن رو کافیه فارسی بنویسید — ترجمه‌ی انگلیسی و عربیش خودکار انجام می‌شه.</p>
+
+    <label for="image">تصویر نمونه‌کار</label>
+    <input type="file" id="image" name="image" accept=".webp,image/webp" required>
+    <p class="hint">فقط فرمت webp. اگه فایل شما jpg یا png هست، اول با یه سایت آنلاین (مثل squoosh.app) به webp تبدیلش کنید. حجم فایل رو هم با همین وبسایت میتونید کاهش بدید.</p>
+
+    <button type="submit" id="submitBtn">افزودن به سایت</button>
+  </form>
+
+  <p id="status"></p>
+
+<script>
+  const form = document.getElementById('uploadForm');
+  const status = document.getElementById('status');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    status.className = 'show loading';
+    status.textContent = 'در حال ارسال و ترجمه... این ممکنه چند ثانیه طول بکشه.';
+
+    try {
+      const res = await fetch('/api/add-portfolio-item', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) throw new Error(data.error || 'خطای ناشناخته رخ داد.');
+
+      status.className = 'show ok';
+      status.textContent = '✅ ' + data.message;
+      form.reset();
+    } catch (err) {
+      status.className = 'show err';
+      status.textContent = '❌ ' + err.message;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
