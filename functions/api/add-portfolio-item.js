@@ -48,7 +48,7 @@ const CATEGORY_FILTER_KEY = {
   animation: 'gallery.filter.animation',
 };
 
-const CATEGORY_LABEL_FA = { logo: 'لوگو', poster: 'پوستر', card: 'کارت ویزیت', animation: 'انیمیشن و ادیت' };
+const CATEGORY_LABEL_FA = { logo: 'لوگو', poster: 'پوستر', card: 'کارت ویزیت', animation: 'انیمیشن و تدوین' };
 
 export async function onRequestPost(context) {
   const { request, env } = context;
