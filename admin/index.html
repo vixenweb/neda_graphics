@@ -78,7 +78,7 @@
 </head>
 <body>
   <h1>افزودن نمونه‌کار جدید</h1>
-  <p class="sub">این فرم مستقیم به سایت وصله و عنوان رو خودکار به انگلیسی و عربی هم ترجمه می‌کنه. بعد از ارسال، ظرف چند دقیقه نمونه‌کار جدید توی گالری سایت (هر سه زبان) نشون داده می‌شه — بدون نیاز به پاک کردن کش یا هیچ کار اضافه‌ای.</p>
+  <p class="sub">این فرم مستقیم به سایت وصله. عنوان رو به هر سه زبان (فارسی، انگلیسی، عربی) وارد کنید. بعد از ارسال، ظرف چند دقیقه نمونه‌کار جدید توی گالری سایت نشون داده می‌شه — بدون نیاز به پاک کردن کش یا هیچ کار اضافه‌ای.</p>
 
   <form id="uploadForm">
     <label for="category">دسته‌بندی</label>
@@ -89,9 +89,15 @@
       <option value="animation">انیمیشن</option>
     </select>
 
-    <label for="title">عنوان کوتاه نمونه‌کار (فارسی)</label>
-    <input type="text" id="title" name="title" placeholder="مثلاً: برند کافه بهار" required>
-    <p class="hint">همین متن رو کافیه فارسی بنویسید — ترجمه‌ی انگلیسی و عربیش خودکار انجام می‌شه.</p>
+    <label for="titleFa">عنوان کوتاه نمونه‌کار (فارسی)</label>
+    <input type="text" id="titleFa" name="titleFa" placeholder="مثلاً: برند کافه بهار" required>
+
+    <label for="titleEn">عنوان به انگلیسی</label>
+    <input type="text" id="titleEn" name="titleEn" placeholder="e.g. Bahar Café Brand" dir="ltr" required>
+
+    <label for="titleAr">عنوان به عربی</label>
+    <input type="text" id="titleAr" name="titleAr" placeholder="مثلاً: علامة مقهى بهار" required>
+    <!-- <p class="hint">هر سه عنوان رو خودتون وارد کنید.</p> -->
 
     <label for="image">تصویر نمونه‌کار</label>
     <input type="file" id="image" name="image" accept=".webp,image/webp" required>
@@ -111,7 +117,7 @@
     e.preventDefault();
     submitBtn.disabled = true;
     status.className = 'show loading';
-    status.textContent = 'در حال ارسال و ترجمه... این ممکنه چند ثانیه طول بکشه.';
+    status.textContent = 'در حال ارسال... این ممکنه چند ثانیه طول بکشه.';
 
     try {
       const res = await fetch('/api/add-portfolio-item', {

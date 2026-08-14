@@ -2,13 +2,13 @@
  * Cloudflare Pages Function
  * Route: POST /api/add-portfolio-item
  *
- * Receives a new portfolio item (category + title + image) from the admin
- * form and commits it directly to your GitHub repo:
+ * Receives a new portfolio item (category + fa/en/ar titles + image) from
+ * the admin form and commits it directly to your GitHub repo:
  *   1. Uploads the image to assets/images/gallery/{category}-{NN}.webp
  *   2. Inserts a matching <article> into the gallery grid in index.html
- *   3. Auto-translates the title (fa -> en/ar) with Cloudflare Workers AI
- *   4. Adds the title translation key to main.js for all three languages
- *   5. Bumps the main.js cache-busting version (?v=N) in index.html AND
+ *   3. Adds the title key to main.js for all three languages, using the
+ *      exact fa/en/ar text the client typed in — no auto-translation
+ *   4. Bumps the main.js cache-busting version (?v=N) in index.html AND
  *      mirrors it into sw.js, so the update is guaranteed to actually show
  *      up for visitors instead of getting stuck behind a stale cache
  *
@@ -22,9 +22,7 @@
  *   GITHUB_OWNER   - your GitHub username or org, e.g. "neda-visuals"
  *   GITHUB_REPO    - the repo name, e.g. "neda-portfolio"
  *   GITHUB_BRANCH  - the branch Cloudflare Pages deploys from, e.g. "main"
- *
- * Also required: an "AI" binding on this Pages project (Settings -> Functions
- * -> AI binding, named exactly "AI") — see SETUP.md.
+ *   ADMIN_USERNAME / ADMIN_PASSWORD - see basicAuth.js
  */
 
 import { checkBasicAuth, unauthorizedResponse } from '../_shared/basicAuth.js';
@@ -63,11 +61,15 @@ export async function onRequestPost(context) {
   try {
     const formData = await request.formData();
     const category = String(formData.get('category') || '');
-    const title = String(formData.get('title') || '').trim();
+    const titleFa = String(formData.get('titleFa') || '').trim();
+    const titleEn = String(formData.get('titleEn') || '').trim();
+    const titleAr = String(formData.get('titleAr') || '').trim();
     const imageFile = formData.get('image');
 
     if (!CATEGORY_ICONS[category]) return json({ error: 'دسته‌بندی نامعتبر است.' }, 400);
-    if (!title) return json({ error: 'عنوان نمونه‌کار را وارد کنید.' }, 400);
+    if (!titleFa) return json({ error: 'عنوان فارسی را وارد کنید.' }, 400);
+    if (!titleEn) return json({ error: 'عنوان انگلیسی را وارد کنید.' }, 400);
+    if (!titleAr) return json({ error: 'عنوان عربی را وارد کنید.' }, 400);
     if (!imageFile || typeof imageFile === 'string') return json({ error: 'تصویر نمونه‌کار انتخاب نشده.' }, 400);
     if (!/\.webp$/i.test(imageFile.name)) {
       return json({ error: 'فایل باید فرمت webp داشته باشد. لطفاً قبل از آپلود، تصویر را به webp تبدیل کنید.' }, 400);
@@ -113,17 +115,16 @@ export async function onRequestPost(context) {
     const webpCount = galleryFiles.filter((f) => /\.webp$/i.test(f.name)).length;
     const paletteIndex = (webpCount % 10) + 1; // cycles through the gm--1..gm--10 palettes
     const indexFile = await githubGetFile(gh, 'index.html');
-    const articleHtml = buildArticleHtml({ category, imageFileName, itemKey, paletteIndex, title });
+    const articleHtml = buildArticleHtml({ category, imageFileName, itemKey, paletteIndex, title: titleFa });
     let updatedIndexHtml = insertIntoGalleryGrid(indexFile.text, articleHtml);
 
-    // ---- 4) Auto-translate the title ----
-    const translations = await translateTitle(env.AI, title);
-
-    // ---- 5) Add the title translation key to main.js (fa/en/ar) ----
+    // ---- 4) Add the title key to main.js (fa/en/ar), using exactly what
+    //         the client typed in — no translation step ----
+    const titles = { fa: titleFa, en: titleEn, ar: titleAr };
     const mainJsFile = await githubGetFile(gh, 'main.js');
-    const updatedMainJs = insertTitleKey(mainJsFile.text, itemKey, translations);
+    const updatedMainJs = insertTitleKey(mainJsFile.text, itemKey, titles);
 
-    // ---- 6) Bump the main.js cache-busting version so the update is never
+    // ---- 5) Bump the main.js cache-busting version so the update is never
     //         stuck behind a stale cache — mirrored into index.html + sw.js ----
     const { html: indexWithBumpedVersion, newVersion } = bumpAssetVersion(updatedIndexHtml, 'main.js');
     updatedIndexHtml = indexWithBumpedVersion;
@@ -158,12 +159,9 @@ export async function onRequestPost(context) {
       }
     }
 
-    const translatedOk = translations.en !== title || translations.ar !== title;
     return json({
       ok: true,
-      message: translatedOk
-        ? `نمونه‌کار «${title}» با موفقیت اضافه و به انگلیسی/عربی هم ترجمه شد (${imageFileName}). ظرف چند دقیقه روی سایت قابل مشاهده خواهد بود.`
-        : `نمونه‌کار «${title}» اضافه شد (${imageFileName})، اما ترجمه‌ی خودکار انجام نشد — فعلاً نسخه‌ی فارسی در انگلیسی/عربی هم نمایش داده می‌شود. ظرف چند دقیقه روی سایت قابل مشاهده خواهد بود.`,
+      message: `نمونه‌کار «${titleFa}» با موفقیت اضافه شد (${imageFileName})، هر سه زبان. ظرف چند دقیقه روی سایت قابل مشاهده خواهد بود.`,
     });
   } catch (err) {
     return json({ error: 'خطا در پردازش: ' + err.message }, 500);
@@ -227,42 +225,6 @@ function escapeHtml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-// ==================== Translation (Cloudflare Workers AI) ====================
-
-// Translates the Persian title into English and Arabic using Cloudflare's
-// built-in Workers AI (no external API key needed). If the AI binding isn't
-// configured, or a call fails for any reason, we fall back to the original
-// Persian text for that language rather than blocking the whole upload —
-// worst case, the client can ask for a manual fix to that one string later.
-async function translateTitle(ai, faText) {
-  const result = { fa: faText, en: faText, ar: faText };
-  if (!ai) return result;
-
-  const targets = [
-    { lang: 'en', code: 'en' },
-    { lang: 'ar', code: 'ar' },
-  ];
-
-  await Promise.all(
-    targets.map(async ({ lang, code }) => {
-      try {
-        const response = await ai.run('@cf/meta/m2m100-1.2b', {
-          text: faText,
-          source_lang: 'fa',
-          target_lang: code,
-        });
-        if (response && response.translated_text) {
-          result[lang] = response.translated_text;
-        }
-      } catch (err) {
-        // Keep the Persian fallback for this language — don't fail the upload.
-      }
-    })
-  );
-
-  return result;
-}
-
 // ==================== Content builders ====================
 
 function buildArticleHtml({ category, imageFileName, itemKey, paletteIndex, title }) {
@@ -316,8 +278,8 @@ function insertIntoGalleryGrid(html, articleHtml) {
 }
 
 // Adds 'gallery.items.{itemKey}.title': '...' right after the last existing
-// gallery item title key in each of the fa/en/ar blocks, using the
-// AI-translated text for that specific language (see translateTitle above).
+// gallery item title key in each of the fa/en/ar blocks, using the exact
+// text the client typed into each of the three title fields.
 //
 // NOTE on the block-end pattern: this file's translation object is indented
 // with 4 spaces per language block ("    fa: {" ... "    },"), NOT 2 spaces.
@@ -325,11 +287,11 @@ function insertIntoGalleryGrid(html, articleHtml) {
 // search the rest of the ENTIRE file instead of just one language's block,
 // inserting every new key in the wrong place — verified against the real
 // file structure before shipping this.
-function insertTitleKey(jsText, itemKey, translations) {
+function insertTitleKey(jsText, itemKey, titles) {
   let updated = jsText;
 
   for (const lang of ['fa', 'en', 'ar']) {
-    const text = (translations[lang] || translations.fa || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    const text = (titles[lang] || titles.fa || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
     const blockStart = updated.indexOf(`${lang}: {`);
     if (blockStart === -1) continue;
     // Matches both "\n    }," (fa/en, more languages follow) and "\n    }"
