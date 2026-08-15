@@ -91,17 +91,39 @@ export async function onRequestPost(context) {
       branch,
     };
 
-    // ---- 1) Figure out the next available number for this category ----
+    // ---- 1) Build a filename from the uploaded file's own name ----
+    //
+    // NOTE: this used to be a sequential counter (logo-01.webp, logo-02.webp,
+    // ...) computed by listing assets/images/gallery and taking max+1. That
+    // approach silently breaks any time the repo's file list doesn't match
+    // what visitors' browsers/Cloudflare's edge cache have already served:
+    // e.g. after a force-push that rewrites history, the "next number" can
+    // go right back to a value that was already used before. Every cached
+    // asset (webp images are cached for 7 days via _headers, and again by
+    // the Service Worker) is keyed purely by URL, so re-using an old
+    // filename for new image bytes means visitors keep seeing the OLD image
+    // at that URL until the cache expires — even though GitHub has the new
+    // file. It looks like "the site is showing old test uploads" but it's
+    // really "this exact filename was already cached from before."
+    //
+    // Fix: derive the filename from the uploaded file's own name (readable,
+    // and what the designer actually picked), then make it unique with a
+    // short random token instead of an incrementing counter. A random token
+    // can't collide with a stale cached filename the way a counter that
+    // resets can — it doesn't depend on correctly reading the current state
+    // of the repo at all.
     const galleryFiles = await githubListDir(gh, 'assets/images/gallery');
-    const pattern = new RegExp(`^${category}-(\\d+)\\.webp$`, 'i');
-    let maxNum = 0;
-    for (const f of galleryFiles) {
-      const m = f.name.match(pattern);
-      if (m) maxNum = Math.max(maxNum, parseInt(m[1], 10));
+    const baseName = sanitizeFileBaseName(imageFile.name);
+    const uniqueToken = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random())).replace(/-/g, '').slice(0, 6);
+    let imageFileName = `${category}-${baseName}-${uniqueToken}.webp`;
+    // Astronomically unlikely, but if this exact name somehow already
+    // exists, fall back to a fresh token rather than ever overwriting an
+    // existing file.
+    while (galleryFiles.some((f) => f.name.toLowerCase() === imageFileName.toLowerCase())) {
+      const retryToken = crypto.randomUUID().replace(/-/g, '').slice(0, 6);
+      imageFileName = `${category}-${baseName}-${retryToken}.webp`;
     }
-    const paddedNum = String(maxNum + 1).padStart(2, '0');
-    const imageFileName = `${category}-${paddedNum}.webp`;
-    const itemKey = `${category}${paddedNum}`; // e.g. "logo11"
+    const itemKey = `${category}-${baseName}-${uniqueToken}`; // e.g. "logo-bahar-cafe-a1b2c3"
 
     // ---- 2) Upload the image exactly as provided ----
     const imageBase64 = arrayBufferToBase64(await imageFile.arrayBuffer());
@@ -219,6 +241,23 @@ function json(obj, status = 200) {
     status,
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });
+}
+
+// Turns an uploaded filename like "Bahar Café Brand FINAL (2).webp" into a
+// safe, lowercase, hyphenated base like "bahar-cafe-brand-final-2" that's
+// safe to put in a URL and in a JS string literal. The user always uploads
+// with an English filename, but this strips anything unexpected just in
+// case (accented letters, spaces, punctuation, non-Latin characters).
+function sanitizeFileBaseName(originalName) {
+  let base = String(originalName || '').replace(/\.[^./\\]+$/, ''); // drop extension
+  base = base
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '') // strip accents
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60);
+  return base || 'image';
 }
 
 function escapeHtml(str) {
