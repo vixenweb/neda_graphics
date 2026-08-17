@@ -956,9 +956,16 @@ a.detail-item:hover .detail-icon { background: var(--gradient-brand); color: #ff
   position: relative;
   z-index: 1;
 }
-.site-footer .signature { margin-top: 6px; font-family: var(--font-latin); font-size: 12px; letter-spacing: 0.03em; }
-.site-footer .signature span:last-child { color: var(--neon-violet); font-weight: 700; }
+.sitarahionlinnature .signature { margin-top: 6px; font-family: var(--font-latin); font-size: 12px; letter-spacing: 0.03em; }
+.sitarahionlinnature .signature span:last-child { color: var(--neon-violet); font-weight: 700; }
+.sitarahionlinnature a {
+  color: inherit;
+  text-decoration: none;
+}
 
+.sitarahionlinnature a:hover {
+  text-decoration: underline;
+}
 /* ==========================================================================
    LIGHTBOX
    ========================================================================== */
