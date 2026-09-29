@@ -55,7 +55,7 @@
       'gallery.eyebrow': 'گالری من',
       'gallery.title': 'نمونه کارها',
       'gallery.desc': 'گزیده‌ای از پروژه‌های طراحی لوگو، پوستر و کارت ویزیت',
-      'gallery.filter.all': 'همههه',
+      'gallery.filter.all': 'همه',
       'gallery.filter.logo': 'لوگو',
       'gallery.filter.poster': 'پوستر',
       'gallery.filter.card': 'کارت ویزیت',
